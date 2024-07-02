@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class HW_DaNa_02 {
@@ -5,8 +6,24 @@ public class HW_DaNa_02 {
     public static void main (String[] args) {
 
        // multiplicationTable(); //EXERCISE 1 - Multiplication Table
-          evenOrOdd();
+      //  evenOrOdd(); // EXERCISE 2 - Odd or even
+        //  factorial(); //EXERCISE 3 - Factorial
+        primeNumbers();
+
     }
+
+ /* ASK user for a number. Convert it to int and return it from the method
+   */
+    public static int askUserInput(Scanner myScanner)
+    {
+        System.out.println("Please enter a number: ");
+        int user_input = Integer.valueOf(myScanner.nextLine());
+        System.out.println("My number is = " + user_input);
+        return user_input;
+    }
+
+
+
 /* EXERCISE 1 - Multiplication Table
    Ask the user for a number (use Scanner).
    Print its multiplication table to 12 (ex: 5 * 1 = 5, 5 * 2 = 10 …. 5 * 12 = 60),
@@ -47,6 +64,104 @@ Check if the number is even or odd and print "Even" or "Odd".
         }
 
         System.out.println("You entered zero. Thank you, bye bye");
+
+    }
+
+    /* EXERCISE 3 - Factorial:
+Ask the user for a non-negative number (use Scanner).
+Calculate the factorial
+Print the calculated factorial.
+     */
+
+    public static void factorial()
+    {   Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter a positive number = ");
+        int readNumber = askUserInput(myScanner);
+        if (readNumber <= 0)
+            System.out.println("you entered a negative number or 0");
+        else
+        {
+            //4! = 4*3*2*1 = 24, 6! = 6*5*4*3*2*1,
+            int factorial = 1;
+            for (int i=readNumber; i>=1; i--)
+            {
+                factorial = factorial*i;
+            }
+
+            System.out.println("The factorial " + readNumber + "!" + "=" + factorial);
+
+        }
+
+    }
+
+/* EXERCISE 4 - Prime Number Checker:
+ Ask the user for a number (use Scanner).
+ Check if number is prime
+ Print "Prime" or "Not Prime".
+*/
+
+    public static void primeNumbers()
+    {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter a positive number = ");
+        int readNumber = askUserInput(myScanner);
+        boolean prim= true;
+        System.out.println("conditia= " + readNumber/2);
+
+        while (prim == true)
+        {
+            for (int i=2; i<=readNumber/2; i++)
+            {
+                System.out.println("sunt in for");
+                if (readNumber%i!=0)
+                {
+                    System.out.println("sunt in IF");
+                    prim = false;
+                    System.out.println("prim = " + prim);
+
+                }
+                else
+                {System.out.println("sunt in else");
+                    System.out.println("i =====" +i);
+                    prim= true;
+
+                }
+
+            }
+        }
+
+        if (prim==true)
+         System.out.println("Numarul citit, " + readNumber + "este PRIM" );
+        else
+            System.out.println("Numarul citit, " + readNumber + " NU este PRIM");
+
+
+    }
+
+/* EXERCISE 5 - Fibonacci Sequence:
+ Print the Fibonacci Sequence up to a number entered by the user
+*/
+    public static void fibonacci()
+      {
+
+      }
+
+
+/* EXERCISE 6 - Sum of Digits:
+ Ask the user for a positive number (use Scanner).
+ Print the sum of all digits.
+*/
+    public static void sumOfDigits()
+    {
+
+    }
+/*
+ 7. Reverse a Number
+ Print the reversed number.
+ */
+
+    public static void reverseNumber()
+    {
 
     }
 
