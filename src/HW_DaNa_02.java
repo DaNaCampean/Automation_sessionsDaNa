@@ -1,14 +1,13 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class HW_DaNa_02 {
 
     public static void main (String[] args) {
 
-       // multiplicationTable(); //EXERCISE 1 - Multiplication Table
-      //  evenOrOdd(); // EXERCISE 2 - Odd or even
-        //  factorial(); //EXERCISE 3 - Factorial
-        primeNumbers();
+       /*multiplicationTable(); //EXERCISE 1 - Multiplication Table
+       evenOrOdd(); // EXERCISE 2 - Odd or even
+       factorial(); //EXERCISE 3 - Factorial
+      */  primeNumbers();
 
     }
 
@@ -104,31 +103,29 @@ Print the calculated factorial.
     {
         Scanner myScanner = new Scanner(System.in);
         int readNumber = askUserInput(myScanner);
-        boolean prim= true;
+        boolean prim=true;
         if (readNumber == 1 || readNumber ==2)
             prim=true;
         else {
             for (int i = 2; i <= readNumber / 2; i++) {
-                System.out.println("sunt in for");
-                if (readNumber % i == 0) {
-                    System.out.println("sunt in IF");
+
+                if (0 == readNumber % i) {
+
                     prim = false;
-                    System.out.println("prim = " + prim);
+
                     break;
                 } else {
-                    System.out.println("sunt in else");
-                    System.out.println("i =====" + i);
                     prim = true;
-                    break;
+
 
                 }
 
             }
         }
-            if (prim==true)
-                System.out.println("Numarul citit, " + readNumber + "este PRIM" );
+            if (prim)
+                System.out.println("The number read , " + readNumber + "is PRIME" );
             else
-                System.out.println("Numarul citit, " + readNumber + " NU este PRIM");
+                System.out.println("The number read, " + readNumber + " is NOT prime");
 
 
 
