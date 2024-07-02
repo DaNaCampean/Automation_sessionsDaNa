@@ -103,37 +103,38 @@ Print the calculated factorial.
     public static void primeNumbers()
     {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Please enter a positive number = ");
         int readNumber = askUserInput(myScanner);
         boolean prim= true;
-        System.out.println("conditia= " + readNumber/2);
-
-        while (prim == true)
-        {
-            for (int i=2; i<=readNumber/2; i++)
-            {
+        if (readNumber == 1 || readNumber ==2)
+            prim=true;
+        else {
+            for (int i = 2; i <= readNumber / 2; i++) {
                 System.out.println("sunt in for");
-                if (readNumber%i!=0)
-                {
+                if (readNumber % i == 0) {
                     System.out.println("sunt in IF");
                     prim = false;
                     System.out.println("prim = " + prim);
-
-                }
-                else
-                {System.out.println("sunt in else");
-                    System.out.println("i =====" +i);
-                    prim= true;
+                    break;
+                } else {
+                    System.out.println("sunt in else");
+                    System.out.println("i =====" + i);
+                    prim = true;
+                    break;
 
                 }
 
             }
         }
+            if (prim==true)
+                System.out.println("Numarul citit, " + readNumber + "este PRIM" );
+            else
+                System.out.println("Numarul citit, " + readNumber + " NU este PRIM");
 
-        if (prim==true)
-         System.out.println("Numarul citit, " + readNumber + "este PRIM" );
-        else
-            System.out.println("Numarul citit, " + readNumber + " NU este PRIM");
+
+
+
+
+
 
 
     }
