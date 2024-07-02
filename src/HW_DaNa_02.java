@@ -7,7 +7,8 @@ public class HW_DaNa_02 {
        /*multiplicationTable(); //EXERCISE 1 - Multiplication Table
        evenOrOdd(); // EXERCISE 2 - Odd or even
        factorial(); //EXERCISE 3 - Factorial
-      */  primeNumbers();
+      */
+        primeNumbers();
 
     }
 
