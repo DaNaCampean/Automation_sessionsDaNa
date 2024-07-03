@@ -10,7 +10,8 @@ public class DaNa_02_HomeWork {
       */
        // primeNumbers();
         //fibonacci();
-         sumOfDigits();
+         //sumOfDigits();
+        reverseNumber();
 
     }
 
@@ -203,6 +204,32 @@ Print the calculated factorial.
 
     public static void reverseNumber()
     {
+        System.out.println("EXERCISE 7: Print the reversed number");
+
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter a number");
+
+       boolean isInt = false;
+       while (isInt == false)
+       {
+         if (myScanner.hasNextInt()==true)
+         {
+            isInt = true;
+            int myNumber = myScanner.nextInt();
+             System.out.print("REVERSE number  = ");
+            do{
+                System.out.print(myNumber%10+ " ");
+                myNumber= myNumber/10;
+            }while(myNumber>0);
+         }
+         else {
+             System.out.println("Please enter a number!");
+             String myNumber1= myScanner.nextLine();
+
+         }
+
+       }
+
 
     }
 
