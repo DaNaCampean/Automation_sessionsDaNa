@@ -1,7 +1,6 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class HW_DaNa_02 {
+public class DaNa_02_HomeWork {
 //edited from Hexagon
     public static void main (String[] args) {
 
@@ -170,39 +169,29 @@ Print the calculated factorial.
     {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Please enter a number: ");
-       // int user_input = Integer.valueOf(myScanner.nextLine());
+        String user_input_string = myScanner.nextLine();
+        int user_input_int = Integer.valueOf(user_input_string);
 
-        String numberString = myScanner.nextLine();
-        int numberInt = Integer.valueOf(numberString);
-
-        if (numberInt<=0)
+        if (user_input_int<=0)
             System.out.println("Your number is zero or Negative.");
         else
         {
-            System.out.println("Your number is: " + numberString);
-            char[] numberChar = numberString.toCharArray();
-            int[] intarray = new int[numberString.length()];
+            System.out.println("Your number is: " + user_input_int);
+
+            char[] numberChar = user_input_string.toCharArray();
+            int string_length = user_input_string.length();
+
             int numberSum=0;
-            for (int i = 0; i < numberString.length(); i++) {
-                System.out.println("char = " + numberChar[i]);
-                intarray[i] = numberChar[i];
-               numberSum = numberSum + intarray[i];
-                System.out.println("Sum of digits for " + numberString + " is: " + numberSum);
+
+            for (int i = 0; i < string_length; i++) {
+                int digit = Character.getNumericValue(numberChar[i]);
+                numberSum = numberSum + digit;
+
             }
             System.out.println("The sum of all digits is: " + numberSum);
 
         }
 
-
-
-        /*
-        void intToArray(int num){
-        if( num != 0){
-            int temp = num %10;
-            num /= 10;
-            intToArray(num);
-            al.add(temp);
-        }*/
     }
 
 
