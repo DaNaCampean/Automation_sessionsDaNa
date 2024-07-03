@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class HW_DaNa_02 {
@@ -9,8 +10,8 @@ public class HW_DaNa_02 {
        factorial(); //EXERCISE 3 - Factorial
       */
        // primeNumbers();
-        fibonacci();
-        testprim();
+        //fibonacci();
+         sumOfDigits();
 
     }
 
@@ -160,31 +161,6 @@ Print the calculated factorial.
 
       }
 
-    public static void testprim()
-    {
-        Scanner myScanner = new Scanner(System.in);
-        int readNumber = askUserInput(myScanner);
-        boolean prim=true;
-        if (readNumber == 1 || readNumber ==2)
-            prim=true;
-        else {
-            while (prim)
-            {
-            for (int i = 2; i <= readNumber / 2; i++) {
-                if (0 == readNumber % i) {
-                    prim = false;
-
-                } else {
-                    prim = true;
-                }
-
-            }}
-        }
-        if (prim)
-            System.out.println("The number read , " + readNumber + "is PRIME" );
-        else
-            System.out.println("The number read, " + readNumber + " is NOT prime");
-    }
 
 /* EXERCISE 6 - Sum of Digits:
  Ask the user for a positive number (use Scanner).
@@ -192,8 +168,45 @@ Print the calculated factorial.
 */
     public static void sumOfDigits()
     {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter a number: ");
+       // int user_input = Integer.valueOf(myScanner.nextLine());
 
+        String numberString = myScanner.nextLine();
+        int numberInt = Integer.valueOf(numberString);
+
+        if (numberInt<=0)
+            System.out.println("Your number is zero or Negative.");
+        else
+        {
+            System.out.println("Your number is: " + numberString);
+            char[] numberChar = numberString.toCharArray();
+            int[] intarray = new int[numberString.length()];
+            int numberSum=0;
+            for (int i = 0; i < numberString.length(); i++) {
+                System.out.println("char = " + numberChar[i]);
+                intarray[i] = numberChar[i];
+               numberSum = numberSum + intarray[i];
+                System.out.println("Sum of digits for " + numberString + " is: " + numberSum);
+            }
+            System.out.println("The sum of all digits is: " + numberSum);
+
+        }
+
+
+
+        /*
+        void intToArray(int num){
+        if( num != 0){
+            int temp = num %10;
+            num /= 10;
+            intToArray(num);
+            al.add(temp);
+        }*/
     }
+
+
+
 /*
  7. Reverse a Number
  Print the reversed number.
