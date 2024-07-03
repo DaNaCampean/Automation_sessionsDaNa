@@ -8,7 +8,9 @@ public class HW_DaNa_02 {
        evenOrOdd(); // EXERCISE 2 - Odd or even
        factorial(); //EXERCISE 3 - Factorial
       */
-        primeNumbers();
+       // primeNumbers();
+        fibonacci();
+        testprim();
 
     }
 
@@ -127,14 +129,6 @@ Print the calculated factorial.
                 System.out.println("The number read , " + readNumber + "is PRIME" );
             else
                 System.out.println("The number read, " + readNumber + " is NOT prime");
-
-
-
-
-
-
-
-
     }
 
 /* EXERCISE 5 - Fibonacci Sequence:
@@ -142,9 +136,55 @@ Print the calculated factorial.
 */
     public static void fibonacci()
       {
+          Scanner myScanner = new Scanner(System.in);
+          int userinput = askUserInput(myScanner);
+          // Numerele Fibonacci sunt numere naturale care fac parte din următorul șir,
+          // in care fiecare număr este egal cu suma celor două de dinainte:
+          // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
+          int fibonacciNR;
+          if (userinput == 0)
+              System.out.println(" Fibonacci string cannot be shown. Your number is zero!");
+          else
+          {   System.out.println("Fibonacci string, until your number is: ");
+              int first=0; int second=1;
+
+              do
+                {
+                  System.out.print(second + " ");
+                  fibonacciNR = first +second;
+                  first = second;
+                  second = fibonacciNR;
+
+                }while(second<=userinput);
+          }
 
       }
 
+    public static void testprim()
+    {
+        Scanner myScanner = new Scanner(System.in);
+        int readNumber = askUserInput(myScanner);
+        boolean prim=true;
+        if (readNumber == 1 || readNumber ==2)
+            prim=true;
+        else {
+            while (prim)
+            {
+            for (int i = 2; i <= readNumber / 2; i++) {
+                if (0 == readNumber % i) {
+                    prim = false;
+
+                } else {
+                    prim = true;
+                }
+
+            }}
+        }
+        if (prim)
+            System.out.println("The number read , " + readNumber + "is PRIME" );
+        else
+            System.out.println("The number read, " + readNumber + " is NOT prime");
+    }
 
 /* EXERCISE 6 - Sum of Digits:
  Ask the user for a positive number (use Scanner).
