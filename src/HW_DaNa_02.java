@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class HW_DaNa_02 {
 //edited from Hexagon
+    //editat direct din github?
     public static void main (String[] args) {
 
        /*multiplicationTable(); //EXERCISE 1 - Multiplication Table
