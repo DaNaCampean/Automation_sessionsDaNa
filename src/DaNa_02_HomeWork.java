@@ -11,7 +11,7 @@ public class DaNa_02_HomeWork {
        // primeNumbers();
         //fibonacci();
          //sumOfDigits();
-        reverseNumber();
+        //reverseNumber();
 
     }
 
