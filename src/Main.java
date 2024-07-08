@@ -7,8 +7,37 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        int values = 0;
+        int sum = 0;
 
-        for (int i = 1; i <= 5; i++) {
+        while (true) {
+            System.out.println("-- values: " + values + ", sum: " + sum);
+
+            System.out.println("Provide a value, a negative value ends the program");
+            int value = Integer.valueOf(scanner.nextLine());
+            if (value < 0) {
+                System.out.println("-- value is negative, exiting loop");
+                break;
+            }
+
+            values = values + 1;
+            sum = sum + value;
+        }
+
+        System.out.println("-- loop exited");
+        System.out.println("-- values: " + values + ", sum: " + sum);
+
+        if (sum == 0) {
+            System.out.println("The average of the values could not be calculated.");
+        } else {
+            System.out.println("Average of values: " + (1.0 * sum / values));
+        }
+    }
+
+
+
+       /* for (int i = 1; i <= 5; i++) {
             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
