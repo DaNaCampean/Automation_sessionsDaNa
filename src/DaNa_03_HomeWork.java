@@ -15,24 +15,54 @@ import java.util.Scanner;
 public class DaNa_03_HomeWork {
    public static int global_counter=0;
    public static int digit = 0;
+   public static int max_nr = 0;
 
 
     public static void main(String[] args)
     {
 
      // exercise2(); //Write a Java program that uses a global variable counter. Create a function named incrementCounter that increments counter by 1 each time it is called.
-        exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
+        // exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
      // exercise4(); // Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.
      // exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
-     // exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
+      exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
         //exercise7(); // Guessing game from the randomize
 
 
     }
     public static void exercise6()
     {
-        System.out.println("EXERCISE 6: Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.\n");
+        System.out.println("EXERCISE 6: Write a function normalizeSpace that takes a String as a parameter " +
+                "and returns a new string with all leading and trailing spaces removed.\n");
+        String dana = read_user_inputScanner();
 
+
+        System.out.println("char = " + dana.charAt(0));
+        String newd="";
+
+
+for (int j=0;j<dana.length();j++)
+{
+        for(int i=1;i<dana.length();i++)
+        {
+            newd = newd.concat(String.valueOf(dana.charAt(i)));
+            System.out.println("newd = " + newd);
+
+
+        }
+
+        newd = newd.concat(String.valueOf(dana.charAt(0)));
+        System.out.println("FINAL = " + newd);
+
+        int mmax = Integer.valueOf(newd);
+        if (max_nr<mmax)
+            max_nr = mmax;
+    System.out.println("newd dupa for = " +newd);
+    dana = newd;
+    newd = "";
+
+    }
+        System.out.println("cel mai mare ne = " + max_nr);
     }
     public static void exercise5()
     {
