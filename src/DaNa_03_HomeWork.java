@@ -11,6 +11,7 @@ Exercises:
 
 
 
+import javax.swing.*;
 import java.util.Scanner;
 
 
@@ -198,13 +199,15 @@ public class DaNa_03_HomeWork {
             for (int i=index;i<removeSpacesString.length();i++)
             {
                 System.out.println("String length is "+removeSpacesString.length());
-                if (Character.isWhitespace(removeSpacesString.charAt(i)));
+                if (Character.isWhitespace(removeSpacesString.charAt(i)))
                 {
                     index_newString = i+1;
                     System.out.println("in while");
                 }
-                System.out.println("Index start is" + index_newString);
-                break;
+                else
+                {
+                    break;
+                }
             }
             //StringBuilder newString = new StringBuilder(removeSpacesString.length()-index_newString);
 
@@ -225,13 +228,15 @@ public class DaNa_03_HomeWork {
             for (int i=(removeSpacesString.length()-1);i>0;i--)
             {
                 System.out.println("String length is "+removeSpacesString.length());
-                if (Character.isWhitespace(removeSpacesString.charAt(i)));
+                if (Character.isWhitespace(removeSpacesString.charAt(i)))
                 {
                     index_newString = i-1;
                     System.out.println("in while");
                 }
-                System.out.println("Index start is" + index_newString);
-                break;
+                else
+                {
+                    break;
+                }
             }
             //StringBuilder newString = new StringBuilder(removeSpacesString.length()-index_newString);
 
