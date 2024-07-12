@@ -17,9 +17,9 @@ import java.util.Scanner;
 
 
 public class DaNa_03_HomeWork {
-   public static int global_counter;
-   public static int digit = 0;
-   public static int max_nr = 0;
+    public static int global_counter;
+    public static int digit = 0;
+    public static int max_nr = 0;
 
 
     public static void main(String[] args)
@@ -109,7 +109,7 @@ public class DaNa_03_HomeWork {
         int max_number = greatest_number(read_user_inputString()); //we need to use as the parameter the string read from the console.
         System.out.println("MAX number formed is = " + max_number);
 
-   }
+    }
 
     public static int greatest_number(String read_number)
     {
@@ -122,7 +122,7 @@ public class DaNa_03_HomeWork {
             {
                 //QUESTION: Why cannot use without stringValue Of?????
                 new_string_number = new_string_number.concat(String.valueOf(read_number.charAt(i)));
-               // System.out.println("new string in for = "+ new_string_number);
+                // System.out.println("new string in for = "+ new_string_number);
 
             }
 
@@ -167,7 +167,7 @@ public class DaNa_03_HomeWork {
         System.out.println("EXERCISE 6: Write a function normalizeSpace that takes a String as a parameter " +
                 "and returns a new string with all leading and trailing spaces removed.\n");
         System.out.println("Please enter a string with spaces:");
-       // System.out.println("TRIM - The string received, with all leading and trailing spaces removed is-\n" + normalizeSpace(read_user_inputString()));
+        // System.out.println("TRIM - The string received, with all leading and trailing spaces removed is-\n" + normalizeSpace(read_user_inputString()));
         System.out.println("NO trim - The string received, with all leading and trailing spaces removed is\n-" + normalizeSpace2(read_user_inputString())+"-");
     }
 
@@ -183,18 +183,18 @@ public class DaNa_03_HomeWork {
         System.out.println("LUNGIME NEW="+leadingRemoved.length());
         // remove trailing spaces
         String trailingRemoved = removeSpaces(leadingRemoved,leadingRemoved.length()-1,false);
-       // System.out.println("END INDEX = " + (string_param.length() - leadingRemoved.length()));
+        // System.out.println("END INDEX = " + (string_param.length() - leadingRemoved.length()));
         System.out.println("SECOND STRING="+trailingRemoved+"-");
 
 
 
-       // return newString;
+        // return newString;
         return trailingRemoved;
     }
     public static String removeSpaces(String removeSpacesString, int index, boolean front)
     {       String newString="";
-            if(front==true)
-            {
+        if(front==true)
+        {
             int index_newString=index;
             for (int i=index;i<removeSpacesString.length();i++)
             {
