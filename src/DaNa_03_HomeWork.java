@@ -11,7 +11,6 @@ Exercises:
 
 
 
-import javax.swing.*;
 import java.util.Scanner;
 
 
@@ -27,9 +26,9 @@ public class DaNa_03_HomeWork {
         // exercise1(); // Write a Java function named greet that takes a single parameter: language and prints "Hello, World!" to the console translated in the specified language. Choose the languages as you please. If no language is selected, English will be used by default. If the language is not recognized, print “Sorry, I don't speak that language.”.
         // exercise2(); //Write a Java program that uses a global variable counter. Create a function named incrementCounter that increments counter by 1 each time it is called.
         // exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
-        // exercise4(); // Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.
-        // exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
-        exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
+         //exercise4(); // Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.
+        exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
+       // exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
         //exercise7(); // Guessing game from the randomize
 
 
@@ -148,6 +147,25 @@ public class DaNa_03_HomeWork {
     {
         //EXERCISE 4. Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits
         System.out.println("EXERCISE 4. Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.\n");
+        System.out.println("Please enter a number to find out the sum of digits:\n");
+        System.out.println("SUM of all digits for your number is:" +  sumOfDigits(read_user_inputInt()));
+
+    }
+
+    public static int sumOfDigits(int n)
+    {
+        System.out.println("Number param = " + n);
+        int sum=0;
+        System.out.println("modulo = " + n%10);
+        System.out.println("/ = " + n/10);
+        do {
+            sum = sum + n%10;
+            n = n/10;
+        }while(n!=0);
+
+
+        return sum;
+
 
     }
 
@@ -156,7 +174,45 @@ public class DaNa_03_HomeWork {
         //EXERCISE 5: Write a function extractNumber that takes a String as a parameter and returns the first number found in the string.
         // If no number is found, return null.");
         System.out.println("EXERCISE 5: Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.\n");
+        System.out.println("Please enter a string toi find the first number:");
+        String user_input = read_user_inputString();
+        Integer extractCall = extractNumber(user_input);
+        if (extractCall ==null) {
+            System.out.println("The string does not contain numbers");
+        } else
+            System.out.println("The First number is: "+ extractCall);
+    }
 
+    public static Integer extractNumber (String parameter)
+    {
+        int firstNumber= 0;
+        boolean existNumber = false;
+        System.out.println("The string is = " + parameter);
+        int lungime = parameter.length();
+        for (int i=0;i<lungime;i++)
+        {
+
+            if (Character.isDigit(parameter.charAt(i)))
+            {
+
+                //firstNumber = Character.getNumericValue(parameter.charAt(i));
+                firstNumber = Integer.parseInt(String.valueOf(parameter.charAt(i)));
+                existNumber = true;
+                break;
+            }
+            else
+            {
+
+                continue;
+            }
+
+        }
+        if (existNumber)
+            return firstNumber;
+        else {
+            return null; //QUESTION???? cu int nu merge oare?
+
+        }
     }
 
     public static void exercise6()
