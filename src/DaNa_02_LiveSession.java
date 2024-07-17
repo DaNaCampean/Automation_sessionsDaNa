@@ -24,53 +24,53 @@ public class DaNa_02_LiveSession {
         int gameNumber = 0;
         int score= 101;
 
-        do {
-            gameNumber++;
-            System.out.println("Number Guessing Game");
-            int randomNumber;
-            randomNumber = (int) (Math.random() * 100) + 1;
-            System.out.println("Random number is: " + randomNumber);
+    do {
+        gameNumber++;
+        System.out.println("Number Guessing Game");
+        int randomNumber;
+        randomNumber = (int) (Math.random() * 100) + 1;
+        System.out.println("Random number is: " + randomNumber);
 
-            System.out.println("Please guess the number: ");
-            int user_input = myScanner.nextInt();
-            int numberofTries = 1;
+        System.out.println("Please guess the number: ");
+        int user_input = myScanner.nextInt();
+        int numberofTries = 1;
 
-            while (user_input != randomNumber) {
-                if (user_input < randomNumber) {
-                    System.out.println("Your number is too low");
-                } else
-                    System.out.println("Your number is too High");
-
-                numberofTries++;
-                System.out.println("Please guess the number: ");
-                user_input = myScanner.nextInt();
-            }
-
-
-            System.out.println("yey! YOU guess the number!");
-            System.out.println("You guess it AFTER " + numberofTries + "tries");
-
-
-            if (score > numberofTries)
-                score = numberofTries;
-
-            if (numberofTries <= 5)
-                System.out.println("Amazing! You have a great intuition!");
-            else if (numberofTries > 5 && numberofTries <= 10) {
-                System.out.println("For 6-10 tries: Well done! You have good guessing skills!");
-            } else if (numberofTries > 10 && numberofTries <= 15) {
-                System.out.println("Well done! You have good guessing skills");
-            } else if (numberofTries > 15 && numberofTries <= 20) {
-                System.out.println("Nice effort! Keep practicing to improve!");
+        while (user_input != randomNumber) {
+            if (user_input < randomNumber) {
+                System.out.println("Your number is too low");
             } else
-                System.out.println("Don't give up! You'll get better with more practice!");
+                System.out.println("Your number is too High");
 
-            Scanner myScanner1 = new Scanner(System.in);
-            System.out.println("Would you like to play again? (Y/N): ");
-            playAgain = myScanner1.nextLine();
-            System.out.println("You choose: " + playAgain);
+            numberofTries++;
+            System.out.println("Please guess the number: ");
+            user_input = myScanner.nextInt();
+        }
 
-        }while (playAgain.equalsIgnoreCase("Y"));
+
+        System.out.println("yey! YOU guess the number!");
+        System.out.println("You guess it AFTER " + numberofTries + "tries");
+
+
+        if (score > numberofTries)
+            score = numberofTries;
+
+        if (numberofTries <= 5)
+            System.out.println("Amazing! You have a great intuition!");
+        else if (numberofTries > 5 && numberofTries <= 10) {
+            System.out.println("For 6-10 tries: Well done! You have good guessing skills!");
+        } else if (numberofTries > 10 && numberofTries <= 15) {
+            System.out.println("Well done! You have good guessing skills");
+        } else if (numberofTries > 15 && numberofTries <= 20) {
+            System.out.println("Nice effort! Keep practicing to improve!");
+        } else
+            System.out.println("Don't give up! You'll get better with more practice!");
+
+        Scanner myScanner1 = new Scanner(System.in);
+        System.out.println("Would you like to play again? (Y/N): ");
+        playAgain = myScanner1.nextLine();
+        System.out.println("You choose: " + playAgain);
+
+    }while (playAgain.equalsIgnoreCase("Y"));
 
         System.out.println("You choose: " + playAgain + ".Exit");
         System.out.println("Number of games = " + gameNumber);
