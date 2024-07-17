@@ -28,9 +28,9 @@ public class DaNa_03_HomeWork {
         // exercise2(); //Write a Java program that uses a global variable counter. Create a function named incrementCounter that increments counter by 1 each time it is called.
         // exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
         //exercise4(); // Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.
-        exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
+        //exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
         // exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
-        //exercise7(); // Guessing game from the randomize
+        guessingGame(); // Guessing game from the randomize
 
 
     }
@@ -310,7 +310,72 @@ public class DaNa_03_HomeWork {
         return newString;
     }
 
+/*
+Number Guessing Game
+● Generate a random number between 1 and 100 ( use Math.random()).
+● Let the user guess the number.
+● In each iteration, check if the guess is correct, higher, or lower.
+● Provide hints (higher or lower) until the guess is correct.
+Bonus:
+● Keep track of the number of user’s tries and display it after the user guesses the number.
+● Add personalized messages based on their performance (the number of tries it takes for the user to guess the correct number). Message examples:
+For 1-5 tries: “Amazing! You have a great intuition!”
+For 6-10 tries: “Well done! You have good guessing skills!”
+For 11-15 tries: “Good job! Practice makes perfect!”
+For 16-20 tries: “Nice effort! Keep practicing to improve!”
+For more than 20 tries: “Don't give up! You'll get better with more
+practice!”.
+● Ask the user for re-play after each successful guess (e.g. “Would you like
+to play again? (Y/N):”). A new random number will be generated after each round. If the user no longer wants to continue, a goodbye message will be displayed.
+● Display a user’s best score before the game exits. The best score would be considered the least number of tries it took to guess the number across multiple games.
+ */
+    public static void guessingGame()
+    {
+   /*
+        Number Guessing Game
 
+        Generate a random number between 1 and 100 ( use Math.random()).
+        ● Let the user guess the number.
+        ● In each iteration, check if the guess is correct, higher, or lower.
+        ● Provide hints (higher or lower) until the guess is correct.
+    */
+
+        System.out.println("NUMBER GUESSING GAME!!!");
+
+        System.out.println("Please enter a number between 1 and 100, and the PC will guess the number");
+        Scanner myScanner = new Scanner(System.in);
+        int user_input = myScanner.nextInt();
+        int maxNumberAllowed = 100;
+        int minNumberAllowed = 1;
+        int generatedNumber = (int) (Math.random() * maxNumberAllowed) +minNumberAllowed;
+        System.out.println("PC generated number is = " + generatedNumber);
+
+        while (user_input != generatedNumber) {
+            if (generatedNumber < user_input) {
+                System.out.println("The number is too low");
+                minNumberAllowed = generatedNumber + 1;
+                System.out.println("MIN = " + minNumberAllowed + ",MAX = "+maxNumberAllowed);
+
+            } else
+            {
+                System.out.println("The number is too High");
+                maxNumberAllowed = generatedNumber-1;
+                System.out.println("MIN = " + minNumberAllowed + ",MAX = "+maxNumberAllowed);
+            }
+
+
+            System.out.println("Please guess the number: ");
+           // generatedNumber = (int) (Math.random() * maxNumberAllowed) +minNumberAllowed;
+            generatedNumber =  ((int) (Math.random()*(maxNumberAllowed - minNumberAllowed))) + minNumberAllowed;
+            System.out.println("PC generated number is = " + generatedNumber);
+        }
+
+
+
+        System.out.println("The generated number is = " + generatedNumber);
+
+    }
+   // randomNumber = (int) (Math.random() * 100) + 1;
 
 
 
