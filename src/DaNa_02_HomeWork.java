@@ -4,15 +4,14 @@ public class DaNa_02_HomeWork {
 //edited from Hexagon
     public static void main (String[] args) {
 
-       /*multiplicationTable(); //EXERCISE 1 - Multiplication Table
+       multiplicationTable(); //EXERCISE 1 - Multiplication Table
        evenOrOdd(); // EXERCISE 2 - Odd or even
        factorial(); //EXERCISE 3 - Factorial
-      */
-       // primeNumbers();
-        //fibonacci();
-         //sumOfDigits();
-        //reverseNumber();
-        System.out.println("for branch");
+       primeNumbers(); // EXERCISE 4 - Prime Number Checker
+       fibonacci(); // EXERCISE 5 - Fibonacci Sequence
+       sumOfDigits(); // EXERCISE 6 -Sum of Digits
+       reverseNumber(); // EXERCISE 7 - Reverse a number
+
 
     }
 
@@ -20,7 +19,7 @@ public class DaNa_02_HomeWork {
    */
     public static int askUserInput(Scanner myScanner)
     {
-        System.out.println("Please enter a number: ");
+
         int user_input = Integer.valueOf(myScanner.nextLine());
         System.out.println("My number is = " + user_input);
         return user_input;
@@ -34,7 +33,7 @@ public class DaNa_02_HomeWork {
    one on each row
 */
     public static void multiplicationTable(){
-
+        System.out.println("MULTIPLICATION TABLE");
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Please enter a number: ");
         int user_input = Integer.valueOf(myScanner.nextLine());
@@ -51,7 +50,7 @@ Keep asking the user for a number until they enter 0.
 Check if the number is even or odd and print "Even" or "Odd".
 */
     public static void evenOrOdd(){
-
+        System.out.println("EVEN OR ODD");
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Please enter a number to see if it is EVEN or ODD. iF you want to exit, enter 0");
         int user_input;
@@ -78,7 +77,8 @@ Print the calculated factorial.
      */
 
     public static void factorial()
-    {   Scanner myScanner = new Scanner(System.in);
+    {   System.out.println("FACTORIAL");
+        Scanner myScanner = new Scanner(System.in);
         System.out.println("Please enter a positive number = ");
         int readNumber = askUserInput(myScanner);
         if (readNumber <= 0)
@@ -105,7 +105,7 @@ Print the calculated factorial.
 */
 
     public static void primeNumbers()
-    {
+    {   System.out.println("PRIME NUMBERS");
         Scanner myScanner = new Scanner(System.in);
         int readNumber = askUserInput(myScanner);
         boolean prim=true;
@@ -138,6 +138,7 @@ Print the calculated factorial.
 */
     public static void fibonacci()
       {
+          System.out.println("FIBONACCI SEQUENCE");
           Scanner myScanner = new Scanner(System.in);
           int userinput = askUserInput(myScanner);
           // Numerele Fibonacci sunt numere naturale care fac parte din următorul șir,
@@ -147,7 +148,7 @@ Print the calculated factorial.
           if (userinput == 0)
               System.out.println(" Fibonacci string cannot be shown. Your number is zero!");
           else
-          {   System.out.println("Fibonacci string, until your number is: ");
+          {   System.out.print("Fibonacci string, until your number is: ");
               int first=0; int second=1;
 
               do
@@ -159,7 +160,7 @@ Print the calculated factorial.
 
                 }while(second<=userinput);
           }
-
+          System.out.println("\n");
       }
 
 
@@ -169,6 +170,7 @@ Print the calculated factorial.
 */
     public static void sumOfDigits()
     {
+        System.out.println("SUM OF DIGITS");
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Please enter a number: ");
         String user_input_string = myScanner.nextLine();
@@ -217,14 +219,14 @@ Print the calculated factorial.
          {
             isInt = true;
             int myNumber = myScanner.nextInt();
-             System.out.print("REVERSE number  = ");
+            System.out.print("REVERSE number  = ");
             do{
                 System.out.print(myNumber%10+ " ");
                 myNumber= myNumber/10;
             }while(myNumber>0);
          }
          else {
-             System.out.println("Please enter a number!");
+             System.out.println("Please enter a number! The previous one was not an Integer!");
              String myNumber1= myScanner.nextLine();
 
          }
