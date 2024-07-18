@@ -86,5 +86,5 @@ public class Solutia_03LiveSession {
         public static void main(String[] args) {
             calculator(10);
         }
-    }
+
 }

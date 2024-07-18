@@ -126,7 +126,7 @@ public static void performCalculation(double sum)
     }
 
     System.out.println(" THE FINAL STUFF = " + final_opoeration);
-    System.out.println("History = " + history.concat(final_opoeration));
+   // System.out.println("History = " + history.concat(final_opoeration));
 
 
 
