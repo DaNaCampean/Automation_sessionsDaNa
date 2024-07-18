@@ -26,7 +26,7 @@ public class DaNa_03_HomeWork {
     {
         // exercise1(); // Write a Java function named greet that takes a single parameter: language and prints "Hello, World!" to the console translated in the specified language. Choose the languages as you please. If no language is selected, English will be used by default. If the language is not recognized, print “Sorry, I don't speak that language.”.
         // exercise2(); //Write a Java program that uses a global variable counter. Create a function named incrementCounter that increments counter by 1 each time it is called.
-         exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
+        // exercise3(); //Write a Java function that takes an integer as its parameter and returns the greatest number that can be formed by moving the first digit to the last position.
         //exercise4(); // Write a function named sumOfDigits that takes an integer parameter n and returns the sum of its digits.
         //exercise5(); // Write a function extractNumber that takes a String as a parameter and returns the first number found in the string. If no number is found, return null.
         // exercise6(); // Write a function normalizeSpace that takes a String as a parameter and returns a new string with all leading and trailing spaces removed.
