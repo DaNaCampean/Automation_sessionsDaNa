@@ -82,8 +82,10 @@ public class Solutia_03LiveSession {
                 }
             }
             scanner.close();
+
         }
         public static void main(String[] args) {
+
             calculator(10);
         }
 
