@@ -29,9 +29,9 @@
         public static void main(String[] args)
         {
            // arrayExercise1(); //index of an element from Array String
-            arrayExercise2(); // average of the elements of an Array Int
-           // arrayExercise3();
-           // arrayExercise4();
+           // arrayExercise2(); // average of the elements of an Array Int
+            //arrayExercise3();
+            arrayExercise4();
            // arrayExercise5();
            // arrayExercise6();
 
@@ -126,14 +126,83 @@
 //                1. The specific position should be the parameter of the method.
 //                2. Return the new array.
             System.out.println("EXERCISE 3\n ");
+            int[] array_int = {1,2,3,5};
+            int[] array_new = new int[array_int.length+1];
+            array_new = insertMethode(array_int,4,3);
+            System.out.println("NEW ARRAY =");
+            for (int i=0;i<array_new.length;i++)
+                System.out.print(array_new[i] + " ");
+
+
+
+
+
         }
+
+        public static int[] insertMethode(int[] array_int, int element, int position)
+        {
+            int[] array_int_new = new int[array_int.length+1];
+            int j=0;
+
+            for (int i=0;i<(array_int.length+1);i++)
+            {
+                if (i == position)
+                    {
+
+                        array_int_new[i]=element;
+
+                    }
+                else {
+                    //if (found_pozition)
+                      //  System.out.println("found poz");
+                    array_int_new[i] = array_int[j];
+                    j++;
+                }
+            }
+
+            return array_int_new;
+        }
+
+
         public static void arrayExercise4()
         {
  //           exercise 4. Write a Java program to find the minimum value of an array.
 //               1. The array should be the parameter of the method.
 //               2. Return the min value found.
 
+            System.out.println("EXERCISE 4: Write a Java program to find the minimum value of an array.\n" +
+                    "//               1. The array should be the parameter of the method.\n" +
+                    "//               2. Return the min value found.");
 
+            System.out.println("Please enter a list of numbers, to find out the minimum of the elements.\n Separate the numbers by space.");
+            Scanner myScanner = new Scanner(System.in);
+            String user_input = myScanner.nextLine();
+            System.out.println("You entered: " + user_input);
+            String[] myArray = user_input.split("[\\s]"); // where the "[\\s]" is the regex for space. split syntax is split(regex)
+           /* Another variant of the for below
+            for (String str : myArray) {
+               System.out.println(str);
+            }
+            */
+            for (int i=0;i<myArray.length;i++)
+            {
+               System.out.println(myArray[i] + " ");
+            }
+            System.out.println("lungimea array = "+ myArray.length);
+            System.out.println("The minimum value is: " + minimumOfArray(myArray));
+
+        }
+        public static int minimumOfArray(String[] myArray)
+        {
+            int min = Integer.parseInt(myArray[0]);
+            for (int i=1;i<myArray.length;i++)
+            {
+                if (min>Integer.parseInt(myArray[i]))
+                    min = Integer.parseInt(myArray[i]);
+
+
+            }
+            return min;
         }
         public static void arrayExercise5()
         {
