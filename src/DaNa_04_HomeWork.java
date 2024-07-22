@@ -33,8 +33,8 @@
            // arrayExercise2(); // average of the elements of an Array Int
             //arrayExercise3();
             //arrayExercise4();
-            arrayExercise5();
-           // arrayExercise6();
+            //arrayExercise5();
+            arrayExercise6();
 
         }
         public static void arrayExercise1()
@@ -297,6 +297,42 @@
 //          exercise  6. Write a Java program to check if an array of integers does not contain x and y.
 //               1. x, y and the array should be the parameters of the method
 //               2. Return true or false.
+            System.out.println("exercise  6:" +
+                    " Write a Java program to check if an array of integers does not contain x and y.\n" +
+                    "               1. x, y and the array should be the parameters of the method\n" +
+                    "               2. Return true or false.");
+            int[] myArray = {1,2,3,4,5,6,7};
+            int x=8,y=1;
+            boolean doesNotContain = doesNotContain(myArray, x,y);
+
+            if (doesNotContain ==true)
+                System.out.println(" The array contain " + x + " and " + y);
+            else
+                System.out.println(" The array does NOT contain " + x + " and " + y);
+
+
+
+        }
+
+        public static boolean doesNotContain(int[] myArray, int x, int y)
+        {
+            boolean finalResult = false;
+            boolean containX = false;
+            boolean containY = false;
+            for(int s:myArray)
+            {
+                if (x==s) containX = true;
+                if (y==s) containY = true;
+
+
+            }
+
+            if (containY && containX == true)
+                finalResult = true;
+
+
+            return finalResult;
+
         }
 
         public static void arrayListExercises()
