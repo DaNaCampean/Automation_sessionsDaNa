@@ -22,6 +22,7 @@
     2. Return true or false.
  */
 
+    import java.sql.Array;
     import java.util.Objects;
     import java.util.Scanner;
     public class DaNa_04_HomeWork {
@@ -31,8 +32,8 @@
            // arrayExercise1(); //index of an element from Array String
            // arrayExercise2(); // average of the elements of an Array Int
             //arrayExercise3();
-            arrayExercise4();
-           // arrayExercise5();
+            //arrayExercise4();
+            arrayExercise5();
            // arrayExercise6();
 
         }
@@ -209,8 +210,88 @@
 //           exercise 5. Write a Java program to find duplicate values in an array of String.
 //                1. The array of strings should be the parameter of the method.
 //               2. Return the duplicated values as array.
+            String[] myArray = {"dana", "didi", "dana", "dana", "didi","Conan", "Conan"};
+            String[] duplicates = duplicateValues(myArray);
+
+            System.out.print("DUPLICATE array is:");
+            for (String s:duplicates)
+                System.out.print(s+ " ");
+
 
         }
+        public static String[] duplicateValues(String[] myString)
+        {
+            System.out.print("MyArray = ");
+            for (String s:myString)
+            {
+                System.out.print(s + " ");
+            }
+            System.out.println("");
+            String[] newArray = new String[myString.length];
+
+
+            for (int k=0;k<myString.length;k++)
+            {
+                String isDuplicate = myString[k];
+
+                if (isDuplicate==null)
+                    continue;
+                else
+                {
+                    for (int i=k+1;i<myString.length;i++)
+                    {
+                        if (isDuplicate.equals(myString[i]))
+                        {
+                            newArray[k] = isDuplicate;
+                            myString[i] = null;
+
+                          //  j++;
+
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+
+
+            }
+
+           // for(String s: myString)
+           // System.out.println("\nold = "+ s);
+            int newArray_length=0;
+            for(String s: newArray)
+            {
+                //System.out.println("NEW = "+ s);
+                if (s!=null)
+                    newArray_length ++;
+            }
+
+
+            String[] duplicate_array = new String[newArray_length];
+            int j=0;
+            for(int i=0;i<newArray.length;i++)
+            {
+                if (newArray[i]!=null)
+                {duplicate_array[j] = newArray[i];
+                j++;}
+            }
+
+            for(String s:duplicate_array)
+                System.out.println("THIS = "+s);
+            return duplicate_array;
+        }
+
+        public static String readString ()
+        {
+            Scanner myScanner = new Scanner(System.in);
+            String user_input_string = myScanner.nextLine();
+            myScanner.close();
+            return user_input_string;
+
+        }
+
         public static void arrayExercise6()
         {
 //          exercise  6. Write a Java program to check if an array of integers does not contain x and y.
