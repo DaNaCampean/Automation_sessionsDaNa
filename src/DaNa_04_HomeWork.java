@@ -20,11 +20,35 @@
 6. Write a Java program to check if an array of integers does not contain x and y.
     1. x, y and the array should be the parameters of the method
     2. Return true or false.
- */
 
-    import java.sql.Array;
-    import java.util.Objects;
+ArrayList
+1. All the exercises from the Arrays section should be redo using ArrayList.
+2. Write a Java program to join two array lists.
+    1. The array lists should be the parameters of the methods
+    2. Return the new list.
+
+HashMap
+1. Write a Java program to add a specific value with a specific key in a HashMap
+    1. The key and value should be the parameters of the method.
+    2. Return the hasp map.
+2. Write a Java program to test if a HashMap contains a specific key
+    1. The key and the map should be the parameters of the method
+    2. Return true or false
+3. Write a Java program to retrieve a value associated with a given key from the HashMap
+    1. The key and the map should be the parameters of the method
+    2. Return the value found
+4. Write a Java program to remove a key-value pair from a HashMap, where key has a given value.
+    1. The key and the map should be the parameters of the method
+    2. Return the modified HashMap
+5.  Write a Java program to replace a value associated with a given key in the HashMap
+    1. The key and the map should be the parameters of the method
+    2. Return the modified HashMap
+6. Write a Java program to add multiple values to the same key in a hash map only if the value is not already stored in the map for another key
+     */
+
+
     import java.util.Scanner;
+    import java.util.ArrayList;
     public class DaNa_04_HomeWork {
 
         public static void main(String[] args)
@@ -34,7 +58,15 @@
             //arrayExercise3();
             //arrayExercise4();
             //arrayExercise5();
-            arrayExercise6();
+            // arrayExercise6();
+            //arrayListExercise1();
+             arrayListExercise2(); // average of the elements of an Array Int
+            //arrayListExercise3();
+            //arrayListExercise4();
+            //arrayListExercise5();
+            // arrayListExercise6();
+            //arrayListExercise7();
+
 
         }
         public static void arrayExercise1()
@@ -338,6 +370,106 @@
         public static void arrayListExercises()
         {
 
+        }
+        public static void arrayListExercise1()
+        {
+            /*
+            Write a Java program to find the index of a specific array element.
+                1. The element should be the parameter of the method.
+                2. Return the index found.
+             */
+
+            System.out.println("-------EXERCISE 1------");
+            Scanner myScanner = new Scanner(System.in);
+            String user_input;
+            int array_len=-1;
+
+            String[] array_string = new String[100]; //array original, to be able to calculate the length.
+            System.out.println("Enter an array. After Every word(element), press enter.\n When you want to end the array, please press enter -");
+            do {
+                user_input =  myScanner.nextLine();
+                array_len++;
+                array_string[array_len] = user_input;
+            }while(!user_input.equals("-"));
+            System.out.println("Array length = "+ array_len);
+            String[] copy_array = new String[array_len];// I created a new array, where I will copy the first one, to eliminate empty indexes
+            for (int i=0;i<array_len;i++)
+            {
+                copy_array[i] = array_string[i];
+            }
+            System.out.println("ARRAY LENGTH IS = "+ copy_array.length);
+            System.out.println("Enter the element for finding it's index/position:");
+            String array_element = myScanner.nextLine();
+            int index_element =findIndexOfArrayElementList(copy_array,array_element);
+            if (index_element==-1)
+                System.out.println("YOUR element is not in the array.");
+            else
+                System.out.println("The index of the specified element is = " + index_element);
+
+        }
+        public static int findIndexOfArrayElementList(String[] myArray, String element)
+        {
+            int indexElement = -1;
+            for (int i=0;i<myArray.length;i++)
+            {
+
+                if (myArray[i].equals(element))
+                {
+                    System.out.println("pozitia este = "+ i);
+                    indexElement = i;
+                    break;
+                }
+
+
+
+            }
+            return indexElement;
+        }
+
+
+        public static void arrayListExercise2()
+        {
+//           exercise 2. Write a program to calculate the average value of array elements.
+//                1. The array should be the parameter of the method.
+//                2. Return the average.
+       /*     System.out.println("EXERCISE 2 - Average value of array elements");
+            Scanner myScanner = new Scanner(System.in);
+            System.out.println("What length you want the array to have?");
+            int array_len = myScanner.nextInt();
+            int[] array_int = new int[array_len];
+            System.out.println("Enter an array of int, separated by enter.");
+            for(int i=0;i<array_len;i++)
+                array_int[i]=myScanner.nextInt();
+
+            System.out.println("THE AVERAGE IS = " + average_arrayList(array_int));
+*/
+            ArrayList<String> list = new ArrayList<>();
+            list.add("String is a reference-type variable");
+            String integer = "dana";
+            list.add(integer);
+            // retrieve the value from position 0 of the word list, and print it
+            System.out.println(list.get(1));
+
+            Scanner scanner = new Scanner(System.in);
+            ArrayList<String> wordList = new ArrayList<>();
+
+            wordList.add("First");
+            wordList.add(scanner.nextLine());
+
+            System.out.println("Number of values on the list: " + list.size());
+
+        }
+
+        public static int average_arrayList(int[] array_int)
+        {
+            int average_array=0;
+            for (int i=0; i<array_int.length;i++)
+            {
+                average_array = average_array + array_int[i];
+
+            }
+
+            return average_array/array_int.length;
         }
         public static void hashMapExercises()
         {

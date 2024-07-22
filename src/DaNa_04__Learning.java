@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DaNa_04__Learning
@@ -14,6 +15,21 @@ public class DaNa_04__Learning
             if (myArray[i].equals("dana3"))
                 System.out.println("pozitia este = "+ i);
         }
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("String is a reference-type variable");
+        String integer = "dana";
+        list.add(integer);
+        // retrieve the value from position 0 of the word list, and print it
+        System.out.println(list.get(1));
+
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> wordList = new ArrayList<>();
+
+        wordList.add("First");
+        wordList.add(scanner.nextLine());
+
+        System.out.println("Number of values on the list: " + list.size());
     }
 
 }
