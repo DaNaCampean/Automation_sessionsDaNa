@@ -432,8 +432,8 @@ HashMap
 //           exercise 2. Write a program to calculate the average value of array elements.
 //                1. The array should be the parameter of the method.
 //                2. Return the average.
-       /*     System.out.println("EXERCISE 2 - Average value of array elements");
-            Scanner myScanner = new Scanner(System.in);
+    System.out.println("EXERCISE 2 - Average value of arrayList elements");
+   /*         Scanner myScanner = new Scanner(System.in);
             System.out.println("What length you want the array to have?");
             int array_len = myScanner.nextInt();
             int[] array_int = new int[array_len];
@@ -443,6 +443,18 @@ HashMap
 
             System.out.println("THE AVERAGE IS = " + average_arrayList(array_int));
 */
+            ArrayList<Integer> myArrayList = new ArrayList<>();
+            myArrayList.add(1);
+            myArrayList.add(1);
+            myArrayList.add(1);
+            myArrayList.addFirst(3);
+            System.out.println("ArrayList["+ 0+"] = "+ myArrayList.get(0));
+            System.out.println("ArrayList["+ 1+"] = "+ myArrayList.get(1));
+            System.out.println("ArrayList["+ 2+"] = "+ myArrayList.get(2));
+            System.out.println("ArrayList["+ 3+"] = "+ myArrayList.get(3));
+
+
+            /*
             ArrayList<String> list = new ArrayList<>();
             list.add("String is a reference-type variable");
             String integer = "dana";
@@ -457,6 +469,8 @@ HashMap
             wordList.add(scanner.nextLine());
 
             System.out.println("Number of values on the list: " + list.size());
+
+             */
 
         }
 
