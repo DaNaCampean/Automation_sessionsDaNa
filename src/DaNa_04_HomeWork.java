@@ -47,6 +47,8 @@ HashMap
      */
 
 
+    import java.util.Arrays;
+    import java.util.Collections;
     import java.util.Scanner;
     import java.util.ArrayList;
     public class DaNa_04_HomeWork {
@@ -432,58 +434,44 @@ HashMap
 //           exercise 2. Write a program to calculate the average value of array elements.
 //                1. The array should be the parameter of the method.
 //                2. Return the average.
-    System.out.println("EXERCISE 2 - Average value of arrayList elements");
-   /*         Scanner myScanner = new Scanner(System.in);
-            System.out.println("What length you want the array to have?");
-            int array_len = myScanner.nextInt();
-            int[] array_int = new int[array_len];
-            System.out.println("Enter an array of int, separated by enter.");
-            for(int i=0;i<array_len;i++)
-                array_int[i]=myScanner.nextInt();
-
-            System.out.println("THE AVERAGE IS = " + average_arrayList(array_int));
-*/
+            System.out.println("EXERCISE 2 - Average value of arrayList elements");
+            Scanner myScanner = new Scanner(System.in);
             ArrayList<Integer> myArrayList = new ArrayList<>();
-            myArrayList.add(1);
-            myArrayList.add(1);
-            myArrayList.add(1);
-            myArrayList.addFirst(3);
-            System.out.println("ArrayList["+ 0+"] = "+ myArrayList.get(0));
-            System.out.println("ArrayList["+ 1+"] = "+ myArrayList.get(1));
-            System.out.println("ArrayList["+ 2+"] = "+ myArrayList.get(2));
-            System.out.println("ArrayList["+ 3+"] = "+ myArrayList.get(3));
+            System.out.println("Enter two numbers to find the average.\n Press y when asked, if you want to enter more numbers. ");
+            myArrayList.add(myScanner.nextInt());
+            myArrayList.add(myScanner.nextInt());
+            myScanner.nextLine();
+            boolean addMore= true;
+            String yesNo;
+            while (addMore)
+            {
+                System.out.println("Do you want to add more numbers? Enter y if you want, anything else if you don't");
+                yesNo = myScanner.nextLine();
+                if (yesNo.equals("y")) {
+                    System.out.println("Please enter a number:");
+                    myArrayList.add(myScanner.nextInt());
+                    myScanner.nextLine();
+                }
+                else
+                    addMore = false;
+            }
 
+            System.out.println("THE AVERAGE IS = " + average_arrayList(myArrayList));
 
-            /*
-            ArrayList<String> list = new ArrayList<>();
-            list.add("String is a reference-type variable");
-            String integer = "dana";
-            list.add(integer);
-            // retrieve the value from position 0 of the word list, and print it
-            System.out.println(list.get(1));
-
-            Scanner scanner = new Scanner(System.in);
-            ArrayList<String> wordList = new ArrayList<>();
-
-            wordList.add("First");
-            wordList.add(scanner.nextLine());
-
-            System.out.println("Number of values on the list: " + list.size());
-
-             */
 
         }
 
-        public static int average_arrayList(int[] array_int)
+        public static double average_arrayList(ArrayList<Integer> array_list)
         {
-            int average_array=0;
-            for (int i=0; i<array_int.length;i++)
+            int average_arrayList=0;
+            for (int i=0; i<array_list.size();i++)
             {
-                average_array = average_array + array_int[i];
+                average_arrayList = average_arrayList + array_list.get(i);
 
             }
 
-            return average_array/array_int.length;
+            double arrayListSize = array_list.size();
+            return average_arrayList/arrayListSize;
         }
         public static void hashMapExercises()
         {
