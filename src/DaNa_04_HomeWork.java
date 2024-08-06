@@ -47,6 +47,9 @@ HashMap
      */
 
 
+
+    import java.lang.reflect.Array;
+    import java.util.HashMap;
     import java.util.Scanner;
     import java.util.ArrayList;
     public class DaNa_04_HomeWork {
@@ -59,13 +62,8 @@ HashMap
             //arrayExercise4();
             //arrayExercise5();
             // arrayExercise6();
-            //arrayListExercise1();
-             arrayListExercise2(); // average of the elements of an Array Int
-            //arrayListExercise3();
-            //arrayListExercise4();
-            //arrayListExercise5();
-            // arrayListExercise6();
-            //arrayListExercise7();
+            arrayListExercises();
+
 
 
         }
@@ -366,18 +364,237 @@ HashMap
             return finalResult;
 
         }
+        /*Array
+
+
+       4. Write a Java program to find the minimum value of an array.
+           1. The array should be the parameter of the method.
+           2. Return the min value found.
+       5. Write a Java program to find duplicate values in an array of String.
+           1. The array of strings should be the parameter of the method.
+           2. Return the duplicated values as array.
+
+
+           */
 
         public static void arrayListExercises()
         {
+           // arrayListExercise7(); // EX7: Write a Java program to join two array lists; 1. The array lists should be the parameters of the methods; 2. Return the new list.
+           //arrayListExercise6(); //6. Write a Java program to check if an array of integers does not contain x and y.
+                                    // 1. x, y and the array should be the parameters of the method
+                                    //    2. Return true or false.
+           // arrayListExercise5();
+           // arrayListExercise4();
+           //arrayListExercise3(); //3. Write a Java program to insert an element at a specific position into an array.
+                                          //    1. The specific position should be the parameter of the method.
+                                          //    2. Return the new array.
+            //arrayListExercise2(); // EX2: Write a program to calculate the average value of array elements;
+                                          // 1. The array should be the parameter of the method;
+                                          // 2. Return the average.
+            //arrayListExercise1(); // 1. Write a Java program to find the index of a specific array element.
+                                    //           1. The element should be the parameter of the method.
+                                    //           2. Return the index found.
+
+           // HashMap
+            //1. Write a Java program to add a specific value with a specific key in a HashMap
+                 // 1. The key and value should be the parameters of the method.
+                 //2. Return the hasp map.
+            hashMapExercise1();
 
         }
+
+        public static void hashMapExercise1()
+        {
+            // Create a HashMap object called capitalCities
+            HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+            // Add keys and values (Country, City)
+            capitalCities.put("England", "London");
+            capitalCities.put("Germany", "Berlin");
+            capitalCities.put("Norway", "Oslo");
+            capitalCities.put("USA", "Washington DC");
+            System.out.println(capitalCities);
+
+            System.out.println("GET = "+ capitalCities.get("England"));
+            System.out.println("GET = "+ capitalCities.get("London"));
+
+        }
+
+        public static void arrayListExercise6()
+        {
+            ArrayList<String> myArray = new ArrayList<String>();
+            for (int i=0;i<5;i++)
+                myArray.add("dana"+i);
+
+            System.out.println("\nfor EACH () : ");
+            //  numbers.forEach( (n) -> { System.out.println(n); } );
+            myArray.forEach( (n) ->
+                    {
+                        System.out.print(n + " ");
+
+                    } );
+            if ((myArray.contains("dana1")) && (myArray.contains("dana29")))
+                System.out.println("\nCONTAINSSSSSSS");
+            else
+                System.out.println("\nNU LE CONTINE BOTH");
+
+       }
+
+
         public static void arrayListExercise1()
+        {
+            ArrayList<String> myArray = new ArrayList<String>();
+            for (int i=0;i<5;i++)
+                myArray.add("dana"+i);
+            System.out.println("OLD STRING IS:");
+            for (String s: myArray)
+                System.out.print(s + " ");
+
+            System.out.println("ESTE SAU NU: "+ myArray.contains("dana1"));
+
+            myArray.add(1, "TEXT");
+            System.out.println("\nNEW STRING IS:");
+            for (String s: myArray)
+                System.out.print(s + " ");
+
+            System.out.println("\nINDEX OF: "+ myArray.indexOf("dana1"));
+
+            System.out.println("\nfor EACH () : ");
+            myArray.forEach((n) -> System.out.print(n + " "));
+
+
+
+
+
+        }
+        public static void arrayListExercise2()
+        {
+//           exercise 2. Write a program to calculate the average value of array elements.
+//                1. The array should be the parameter of the method.
+//                2. Return the average.
+            System.out.println("EXERCISE 2 - Average value of arrayList elements");
+            Scanner myScanner = new Scanner(System.in);
+            ArrayList<Integer> myArrayList = new ArrayList<>();
+            System.out.println("Enter two numbers to find the average.\n Press y when asked, if you want to enter more numbers. ");
+            myArrayList.add(myScanner.nextInt());
+            myArrayList.add(myScanner.nextInt());
+            myScanner.nextLine();
+            boolean addMore= true;
+            String yesNo;
+            while (addMore)
+            {
+                System.out.println("Do you want to add more numbers? Enter y if you want, anything else if you don't");
+                yesNo = myScanner.nextLine();
+                if (yesNo.equalsIgnoreCase("y")) {
+                    System.out.println("Please enter a number:");
+                    myArrayList.add(myScanner.nextInt());
+                    myScanner.nextLine();
+                }
+                else
+                    addMore = false;
+            }
+
+            System.out.println("THE AVERAGE IS = " + average_arrayList(myArrayList));
+
+
+        }
+
+        public static double average_arrayList(ArrayList<Integer> array_list)
+        {
+            int average_arrayList=0;
+            for (int i=0; i<array_list.size();i++)
+            {
+                average_arrayList = average_arrayList + array_list.get(i);
+
+            }
+
+            double arrayListSize = array_list.size();
+            return average_arrayList/arrayListSize;
+        }
+
+        public static void arrayListExercise3()
+        //3. Write a Java program to insert an element at a specific position into an array.
+        //    1. The specific position should be the parameter of the method.
+        //    2. Return the new array.
+
+        {
+            ArrayList<String> myArray = new ArrayList<String>();
+            for (int i=0;i<5;i++)
+                myArray.add("dana"+i);
+            System.out.println("OLD STRING IS:");
+            for (String s: myArray)
+                System.out.print(s + " ");
+
+            myArray.add(1, "TEXT");
+            System.out.println("\nNEW STRING IS:");
+            for (String s: myArray)
+                System.out.print(s + " ");
+
+
+
+
+        }
+        public static void arrayListExercise7()
+        {
+            ArrayList<String> myArray1 = new ArrayList<String>();
+            ArrayList<String> myArray2 = new ArrayList<String>();
+
+            for (int i=1;i<11;i++)
+            {
+                myArray1.add("dana"+i);
+                myArray2.add("second"+i);
+            }
+            System.out.println("Array1:");
+            for (String i : myArray1) {
+                System.out.println(i);
+            }
+            System.out.println("Array2:");
+            for (String i : myArray2) {
+                System.out.println(i);
+            }
+
+            ArrayList<String> finalJoinedArrayList = new ArrayList<String>();
+            finalJoinedArrayList = joinNewArrayList(myArray1, myArray2);
+            System.out.print("\nThe joined array List is: ");
+            for (String s: finalJoinedArrayList)
+                System.out.print(s+ " ");
+
+
+
+        }
+        public static ArrayList<String> joinNewArrayList(ArrayList<String> myArray1, ArrayList<String> myArray2)
+        {
+
+            //Variant 1
+           ArrayList<String> finalArrayList = new ArrayList<String>();
+          /*
+           for (String i : myArray1)
+               finalArrayList.add(i);
+           for (String i: myArray2)
+               finalArrayList.add(i);
+
+            System.out.println("Final ArrayList:");
+            for (String i : finalArrayList)
+                System.out.print(i + " ");
+            return finalArrayList;
+            */
+            //Variant 2:
+             myArray1.addAll(myArray2);
+            for (String i : myArray1)
+                System.out.print(i + " ");
+             return  myArray1;
+
+
+        }
+
+
+     /*   public static void arrayListExercise1()
         {
             /*
             Write a Java program to find the index of a specific array element.
                 1. The element should be the parameter of the method.
                 2. Return the index found.
-             */
+
 
             System.out.println("-------EXERCISE 1------");
             Scanner myScanner = new Scanner(System.in);
@@ -432,62 +649,50 @@ HashMap
 //           exercise 2. Write a program to calculate the average value of array elements.
 //                1. The array should be the parameter of the method.
 //                2. Return the average.
-    System.out.println("EXERCISE 2 - Average value of arrayList elements");
-   /*         Scanner myScanner = new Scanner(System.in);
-            System.out.println("What length you want the array to have?");
-            int array_len = myScanner.nextInt();
-            int[] array_int = new int[array_len];
-            System.out.println("Enter an array of int, separated by enter.");
-            for(int i=0;i<array_len;i++)
-                array_int[i]=myScanner.nextInt();
-
-            System.out.println("THE AVERAGE IS = " + average_arrayList(array_int));
-*/
+            System.out.println("EXERCISE 2 - Average value of arrayList elements");
+            Scanner myScanner = new Scanner(System.in);
             ArrayList<Integer> myArrayList = new ArrayList<>();
-            myArrayList.add(1);
-            myArrayList.add(1);
-            myArrayList.add(1);
-            myArrayList.addFirst(3);
-            System.out.println("ArrayList["+ 0+"] = "+ myArrayList.get(0));
-            System.out.println("ArrayList["+ 1+"] = "+ myArrayList.get(1));
-            System.out.println("ArrayList["+ 2+"] = "+ myArrayList.get(2));
-            System.out.println("ArrayList["+ 3+"] = "+ myArrayList.get(3));
+            System.out.println("Enter two numbers to find the average.\n Press y when asked, if you want to enter more numbers. ");
+            myArrayList.add(myScanner.nextInt());
+            myArrayList.add(myScanner.nextInt());
+            myScanner.nextLine();
+            boolean addMore= true;
+            String yesNo;
+            while (addMore)
+            {
+                System.out.println("Do you want to add more numbers? Enter y if you want, anything else if you don't");
+                yesNo = myScanner.nextLine();
+                if (yesNo.equals("y")) {
+                    System.out.println("Please enter a number:");
+                    myArrayList.add(myScanner.nextInt());
+                    myScanner.nextLine();
+                }
+                else
+                    addMore = false;
+            }
 
+            System.out.println("THE AVERAGE IS = " + average_arrayList(myArrayList));
 
-            /*
-            ArrayList<String> list = new ArrayList<>();
-            list.add("String is a reference-type variable");
-            String integer = "dana";
-            list.add(integer);
-            // retrieve the value from position 0 of the word list, and print it
-            System.out.println(list.get(1));
-
-            Scanner scanner = new Scanner(System.in);
-            ArrayList<String> wordList = new ArrayList<>();
-
-            wordList.add("First");
-            wordList.add(scanner.nextLine());
-
-            System.out.println("Number of values on the list: " + list.size());
-
-             */
 
         }
 
-        public static int average_arrayList(int[] array_int)
+        public static double average_arrayList(ArrayList<Integer> array_list)
         {
-            int average_array=0;
-            for (int i=0; i<array_int.length;i++)
+            int average_arrayList=0;
+            for (int i=0; i<array_list.size();i++)
             {
-                average_array = average_array + array_int[i];
+                average_arrayList = average_arrayList + array_list.get(i);
 
             }
 
-            return average_array/array_int.length;
+            double arrayListSize = array_list.size();
+            return average_arrayList/arrayListSize;
         }
         public static void hashMapExercises()
         {
 
         }
+        */
     }
+
 

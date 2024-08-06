@@ -30,6 +30,16 @@ public class DaNa_04__Learning
         wordList.add(scanner.nextLine());
 
         System.out.println("Number of values on the list: " + list.size());
+
+        ArrayList<Integer> myArrayList = new ArrayList<>();
+        myArrayList.add(1);
+        myArrayList.add(1);
+        myArrayList.add(1);
+        myArrayList.addFirst(3);
+        System.out.println("ArrayList["+ 0+"] = "+ myArrayList.get(0));
+        System.out.println("ArrayList["+ 1+"] = "+ myArrayList.get(1));
+        System.out.println("ArrayList["+ 2+"] = "+ myArrayList.get(2));
+        System.out.println("ArrayList["+ 3+"] = "+ myArrayList.get(3));
     }
 
 }
