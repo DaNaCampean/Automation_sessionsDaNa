@@ -114,19 +114,7 @@ HashMap
 
         }
         public static void hashMapExercise1() {
-            // Create a HashMap object called capitalCities
-            HashMap<String, String> capitalCities = new HashMap<String, String>();
 
-            // Add keys and values (Country, City)
-            capitalCities.put("England", "London");
-            capitalCities.put("Germany", "Berlin");
-            capitalCities.put("Norway", "Oslo");
-            capitalCities.put("USA", "Washington DC");
-            System.out.println(capitalCities);
-
-            System.out.println("GET = " + capitalCities.get("England"));
-            System.out.println("GET = " + capitalCities.get("London"));
-            System.out.println(capitalCities);
 
         }
 
