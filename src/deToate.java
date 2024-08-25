@@ -1,5 +1,43 @@
 public class deToate {
+/*
+public static void visitingTimeTable ()
+    {
+        // creating the visiting TimeTable using HashMap in which the keys are days of the week and the values are time intervals
+        //            (opening and closing hours).
 
+        ArrayList<String> mondayProgram = new ArrayList<>();
+        ArrayList<Integer> thursdayProgram = new ArrayList<>();
+        ArrayList<Integer> wednesdayProgram = new ArrayList<>();
+        ArrayList<Integer> tuesdayProgram = new ArrayList<>();
+        ArrayList<Integer> fridayProgram = new ArrayList<>();
+
+        mondayProgram.add("9:00");
+        mondayProgram.add("18:00");
+
+        thursdayProgram.add(11);
+        thursdayProgram.add(19);
+
+        wednesdayProgram.add(8);
+        wednesdayProgram.add(17);
+
+        tuesdayProgram.add(9);
+        tuesdayProgram.add(20);
+
+        fridayProgram.add(10);
+        fridayProgram.add(18);
+
+
+        HashMap<String, ArrayList<String>> visitingTimeTable = new HashMap<String, ArrayList<String>>();
+        visitingTimeTable.put("Monday", mondayProgram);
+       // visitingTimeTable.put("Thursday", thursdayProgram);
+       // visitingTimeTable.put("Wednesday", wednesdayProgram);
+        //visitingTimeTable.put("Tuesday", tuesdayProgram);
+        //visitingTimeTable.put("Friday", fridayProgram);
+
+        System.out.println("table = "+ visitingTimeTable);
+
+    }
+ */
 
  //   import java.util.Scanner;
 /*
