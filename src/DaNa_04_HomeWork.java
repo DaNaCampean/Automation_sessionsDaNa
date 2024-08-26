@@ -60,9 +60,9 @@ HashMap
            // arrayExercise2(); // average of the elements of an Array Int
             //arrayExercise3();
             //arrayExercise4();
-            //arrayExercise5();
+            arrayExercise5();
             // arrayExercise6();
-            arrayListExercises();
+           // arrayListExercises();
 
 
 

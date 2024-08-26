@@ -1,5 +1,6 @@
 package Session4_Array_ArrayList_HashMap;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -100,14 +101,25 @@ HashMap
 
             // 6. Write a Java program to add multiple values to the same key in a hash map
             // only if the value is not already stored in the map for another key
+            System.out.println("EX 6666666");
 
-           dayWatches.put("Monday", "dana");
+            System.out.println("ORIGINAL HashMap = " + dayWatches);
+           // System.out.println("ADD Dana on Monday: ");
+           //dayWatches.put("Monday", "dana");
+           // System.out.println(dayWatches);
+            System.out.println("Check if Atlantic in there:");
            if (dayWatches.containsValue("Atlantic"))
-               System.out.println("x");
-            dayWatches.computeIfAbsent("Monday", (k) -> "Dana (" + k + ")");
+               System.out.println("Yep. Atlantic is in the list");
+
+            System.out.println("IF ABSENT DANA1 , ADD ON moNDAY");
+            dayWatches.computeIfAbsent("Monday", k -> "dana1");
             System.out.println(dayWatches);
+
+            System.out.println("IF ABSENT oRIENT  , ADD ON moNDAY");
             dayWatches.computeIfAbsent("Monday", (k) -> "Orient (" + k + ")");
             System.out.println(dayWatches);
+
+            System.out.println("IF present  orient  , ADD ON moNDAY");
             dayWatches.computeIfPresent("Monday", (k, v) -> "Orient" + "(" + k + ")");
             System.out.println(dayWatches);
 
