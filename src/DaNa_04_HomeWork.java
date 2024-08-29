@@ -60,9 +60,9 @@ HashMap
            // arrayExercise2(); // average of the elements of an Array Int
             //arrayExercise3();
             //arrayExercise4();
-            //arrayExercise5();
+           arrayExercise5();
             // arrayExercise6();
-            arrayListExercises();
+           // arrayListExercises();
 
 
 
@@ -298,6 +298,11 @@ HashMap
                     newArray_length ++;
             }
 
+/// redo: cand dai de al doilea duplicat, compara cu noul array care deja contine ce am gasit ca duplicates!!!!!!!
+
+            // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
+
+            //ALTA VARIANTA: AI UN KEYSET....CARE ELIMINA SINGUR DUPLICATES.....SI APOI IL FACI ARRAY...SO IN 3 LINII DE COD...SE ELIMINAU TOATE DUPS:)
 
             String[] duplicate_array = new String[newArray_length];
             int j=0;

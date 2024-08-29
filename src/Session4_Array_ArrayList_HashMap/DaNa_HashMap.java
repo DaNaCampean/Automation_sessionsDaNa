@@ -100,7 +100,13 @@ HashMap
 
             // 6. Write a Java program to add multiple values to the same key in a hash map
             // only if the value is not already stored in the map for another key
-
+            System.out.println("EX6 --------------");
+        //    6. Write a Java program to add multiple values to the same key in a hash map only if the value is not already stored in the map for another key
+          // TREBUIA SA AM O LISTA CU DANA, ORIENT, ETC....
+             //mONDAY = A,B,C
+               //     ADAUG C IN mONDAY
+                // try THIS!!!!!!!!!!!!!
+            System.out.println(dayWatches);
            dayWatches.put("Monday", "dana");
            if (dayWatches.containsValue("Atlantic"))
                System.out.println("x");

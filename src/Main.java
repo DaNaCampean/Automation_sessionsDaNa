@@ -1,12 +1,52 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+            int a = 12385;
+            int max = a;
+            int lungime = String.valueOf(a).length();
+            int z=1;
+            int b;
+            int c;
+            for (int i=1; i<lungime; i++){
+                z=z*10; // in z calulez ce multiplu de 10 am nevoie ca sa scot prima cifra ex. a=4567 -> z=1000
+            }
+            for (int i=1; i<= lungime; i++){
+                b=a%z; // in b tin numarul fara prima cifra ex. a=453 -> b=53
+                c=a/z;// in c scot prima cifra
+                a=b*10+c; // reconstruiesc a din b si c
+                if (a>max) {
+                    max=a;
+                }
+            }
+
+        System.out.println("MAX = " + max);
+        }
+
+
+
+
+
+/*
+        HashMap<String, String> visitingTimeTable = new HashMap<String, String>();
+
+
+        visitingTimeTable.put("Monday", "09:00 - 18:00");
+        visitingTimeTable.put("Tuesday", "11:00 - 19:00");
+        visitingTimeTable.put("Wednesday", "08:00 - 17:00");
+        visitingTimeTable.put("Thursday", "09:00 - 20:00");
+        visitingTimeTable.put("Friday", "10:00 - 18:00");
+        //System.out.println("table = "+ visitingTimeTable);
+
+*/
+    }
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+       /* System.out.printf("Hello and welcome!");
         Scanner scanner = new Scanner(System.in);
         int values = 0;
         int sum = 0;
@@ -102,7 +142,7 @@ public class Main {
         }*/
 
 
-}
+
 /*
 Automation testing in Java
 
