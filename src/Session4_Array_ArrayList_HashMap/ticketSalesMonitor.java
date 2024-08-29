@@ -165,13 +165,13 @@ public class ticketSalesMonitor {
         // total number of sales for the week.
 
         System.out.println("GENERATED REPORT:");
-        generated_report(totalSalesDays);
+        generated_report(totalRevenuePerDays);
 
 
 
     }
 
-    public static void generated_report(HashMap<String, Integer> sales)
+    public static void generated_report(HashMap<String, Double> sales)
     {
 
         //Implement a command to provide the following statistics: the day with the highest
@@ -184,13 +184,13 @@ public class ticketSalesMonitor {
             System.out.println(i + " : " + sales.get(i));
         }
 
-        int max_sales = sales.get("Monday");
-        int min_sales = sales.get("Monday");
+        double max_sales = sales.get("Monday");
+        double min_sales = sales.get("Monday");
 
-        int total_sales = 0;
+        double total_sales = 0;
         double average_sales = 0.0;
 
-        int need_var = 0;
+        double need_var = 0;
         String need_day_max="Monday";
         String need_day_min="Monday";
 

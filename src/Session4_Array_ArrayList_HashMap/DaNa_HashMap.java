@@ -109,11 +109,17 @@ HashMap
             System.out.println(dayWatches);
            dayWatches.put("Monday", "dana");
            if (dayWatches.containsValue("Atlantic"))
-               System.out.println("x");
-            dayWatches.computeIfAbsent("Monday", (k) -> "Dana (" + k + ")");
+               System.out.println("Yep. Atlantic is in the list");
+
+            System.out.println("IF ABSENT DANA1 , ADD ON moNDAY");
+            dayWatches.computeIfAbsent("Monday", k -> "dana1");
             System.out.println(dayWatches);
+
+            System.out.println("IF ABSENT oRIENT  , ADD ON moNDAY");
             dayWatches.computeIfAbsent("Monday", (k) -> "Orient (" + k + ")");
             System.out.println(dayWatches);
+
+            System.out.println("IF present  orient  , ADD ON moNDAY");
             dayWatches.computeIfPresent("Monday", (k, v) -> "Orient" + "(" + k + ")");
             System.out.println(dayWatches);
 
