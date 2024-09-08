@@ -302,7 +302,8 @@ HashMap
 
             // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
 
-            //ALTA VARIANTA: AI UN KEYSET....CARE ELIMINA SINGUR DUPLICATES.....SI APOI IL FACI ARRAY...SO IN 3 LINII DE COD...SE ELIMINAU TOATE DUPS:)
+            //ALTA VARIANTA: AI UN KEYSET....CARE ELIMINA SINGUR DUPLICATES.....SI APOI IL FACI ARRAY...SO IN 3 LINII DE COD...
+            // SE ELIMINAU TOATE DUPS:)
 
             String[] duplicate_array = new String[newArray_length];
             int j=0;

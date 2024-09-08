@@ -1,17 +1,32 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class DaNa_05_hw {
  /*   Part 5
 
-    Where to learn? Varianta 1 ( part 3.4) Varianta 2 (curs Alex Prodan) Varianta 3 (Udemy – chapters - Primitive Types Recap and the String Data Type) Java Strings & Java String Methods String class & String builder Java Regular Expressions & Pattern class
+    Where to learn? Varianta 1 ( part 3.4) Varianta 2 (curs Alex Prodan)
+    Varianta 3 (Udemy – chapters - Primitive Types Recap and the String Data Type)
+    Java Strings & Java String Methods String class & String builder Java Regular Expressions & Pattern class
 
     Requirements:
 
             - String operations
 
     Checkpoint exercise(s) to be solved during meeting:
+    1. Write a method reverseString(String str) that takes a string and returns it reversed.
 
+
+2. Write a method countVowels(String str) that counts the number of vowels (a, e, i, o, u) in a given string.
+
+3. Write a method areAnagrams(String str1, String str2) that checks if two given strings are anagrams
+(contain the same characters in a different order).
+
+
+4. Write a method replaceCharacter(String str, char oldChar, char newChar) that replaces all occurrences of oldChar with newChar in the given string.
+
+
+5. Write a method isPalindrome(String str) that checks if a given string is a palindrome (reads the same forwards and backwards).
 
             6. Write a method charFrequency(String str, char c) that takes a string and a character as input and returns the number of times the character appears in the string.
 
@@ -39,17 +54,37 @@ public static void main(String[] args) {
   //  System.out.println("StringBuilder Method - REVERSE STRING IS: " + reverseString("dana") );
 
 // 2. Write a method countVowels(String str) that counts the number of vowels (a, e, i, o, u) in a given string.
-    String danaString = "danutzika";
-    System.out.println("Number of Vowels = " + countVowels(danaString));
+   // String danaString = "danutzika";
+   // System.out.println("Number of Vowels = " + countVowels(danaString));
 
-// 3. Write a method areAnagrams(String str1, String str2) that checks if two given strings are anagrams
-// (contain the same characters in a different order).
+// EXTRA: SEARCH FOR DUPLICATE VALUES
+    dups();
+
+   }
+
+   public static void dups()
+   {
+       System.out.println("duplicates exercise");
+       String[] myArray = {"dana", "didi","dana", "dana", "didi","adi", "carmen"};
+       System.out.print("My Array = " );
+       for (String mystr:myArray)
+           System.out.print(mystr + " ");
+       System.out.println();
+
+       HashMap<String, Integer> myHashMap = new HashMap<>();
+       for (String myStr:myArray)
+       {
+           if (myHashMap.get(myStr) == null)
+               myHashMap.put(myStr, 1);
+           else
+               myHashMap.put(myStr,myHashMap.get(myStr)+1);
+       }
+
+       System.out.println("my hashMap = " + myHashMap);
 
 
-// 4. Write a method replaceCharacter(String str, char oldChar, char newChar) that replaces all occurrences of oldChar with newChar in the given string.
-
-
-// 5. Write a method isPalindrome(String str) that checks if a given string is a palindrome (reads the same forwards and backwards).
+       System.out.println("key = " + myHashMap.keySet());
+       System.out.println("values = " + myHashMap.values());
 
 
    }

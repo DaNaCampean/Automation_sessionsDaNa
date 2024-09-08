@@ -2,6 +2,7 @@ package Session4_Array_ArrayList_HashMap;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class DaNa_HashMap {
 
@@ -29,6 +30,9 @@ HashMap
 
         public static void main(String args[])
         {
+            dups();
+
+            /*
 
            // hashMapExercise1();
 
@@ -55,7 +59,7 @@ HashMap
             dayWatches.put(day, watch);
 
              */
-
+/*
             dayWatches.put("Monday", "Swatch");
             dayWatches.put("Tuesday", "Atlantic");
             dayWatches.put("Wednesday", "Cornavin");
@@ -123,14 +127,90 @@ HashMap
             dayWatches.computeIfPresent("Monday", (k, v) -> "Orient" + "(" + k + ")");
             System.out.println(dayWatches);
 
-
+*/
         }
         public static void hashMapExercise1() {
 
 
         }
+/*
 
-    }
+// redo: cand dai de al doilea duplicat, compara cu noul array care deja contine ce am gasit ca duplicates!!!!!!!
+
+            // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
+
+            //ALTA VARIANTA: AI UN KEYSET....CARE ELIMINA SINGUR DUPLICATES.....SI APOI IL FACI ARRAY...SO IN 3 LINII DE COD...SE ELIMINAU TOATE DUPS:)
+
+exercise 5. Write a Java program to find duplicate values in an array of String.
+//                1. The array of strings should be the parameter of the method.
+//               2. Return the duplicated values as array.
+            String[] myArray = {"dana", "didi", "dana", "dana", "didi","Conan", "Conan"};
+ */
+
+    public static void dups() {
+        System.out.println("duplicates exercise");
+        String[] myArray = {"dana", "didi", "dana", "dana", "Felix", "didi", "Conan", "Conan", "Otto"};
+
+        //Echo the Array
+        System.out.print("My Array = ");
+        for (String mystr : myArray)
+            System.out.print(mystr + " ");
+        System.out.println();
+
+        // Create a HashMap with all Array elements ( this will not add duplicates)
+        HashMap<String, Integer> myHashMap = new HashMap<>();
+
+        //Create a HashMap with keys: array elements. This will not allow duplicates
+        // The values for the Hash Map will be the number of occurences
+        for (String myStr : myArray)
+        {
+               if (myHashMap.get(myStr) == null) {
+                   myHashMap.put(myStr, 1);
+               } else
+                myHashMap.put(myStr, myHashMap.get(myStr) + 1);
+        }
+
+        System.out.println("my hashMap = " + myHashMap);
+
+        ArrayList<String> myArrayList = new ArrayList<>();
+       // System.out.println("key = " + myHashMap.keySet());
+        //System.out.println("values = " + myHashMap.values());
+
+        for (String myHM : myHashMap.keySet())
+        {
+            if (myHashMap.get(myHM).equals(1))
+              {
+                System.out.println("THIS NEED REMOVAL = " + myHM + " - " + myHashMap.get(myHM));
+                myArrayList.add(myHM);
+            }
+
+        }
+
+        System.out.println("ArrayList = " + myArrayList);
+        for (String s:myArrayList)
+            myHashMap.remove(s);
+
+        System.out.println("hash lung = " + myHashMap.size());
+
+      //  String[] duplicatesArray = myHashMap.keySet().toArray(new String[myHashMap.size()]);
+        String[] duplicatesArray = new String[myHashMap.size()];
+              duplicatesArray= myHashMap.keySet().toArray(duplicatesArray);
+
+
+        System.out.println("my hashMap end = " + myHashMap);
+
+        System.out.println("ARRAY FINAL DUPS = ");
+        for (String s:duplicatesArray)
+        System.out.print(s + " ");
+        System.out.println();
+
+
+
+
+
+
+
+}}
 
 
 

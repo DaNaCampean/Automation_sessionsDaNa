@@ -4,68 +4,141 @@ import java.util.HashMap;
 
 public class findDuplicates {
 
+   /* exercise 5. Write a Java program to find duplicate values in an array of String.
+//                1. The array of strings should be the parameter of the method.
+//               2. Return the duplicated values as array.
+// redo: cand dai de al doilea duplicat, compara cu noul array care deja contine ce am gasit ca duplicates!!!!!!!
 
+            // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
 
+            //ALTA VARIANTA: AI UN KEYSET....CARE ELIMINA SINGUR DUPLICATES.....SI APOI IL FACI ARRAY..
+            .SO IN 3 LINII DE COD...SE ELIMINAU TOATE DUPS:)
 
+*/
         public static void main(String[] args) {
-            String[] myArray = {"dana1", "didi", "dana", "dana", "didi", "Conan", "Conan"};
-            String[] duplicates = findDuplicates(myArray);
+            String[] myArray = {"Atlantic", "Orient", "Atlantic", "Atlantic", "Rolex", "Orient", "Seiko"};
+            System.out.println("The Array to identify the duplicates:");
+            for (String str:myArray)
+                System.out.print(str+ " ");
+            System.out.println();
 
-            //number of dups:
-            findDuplicatesNr(myArray);
+            //String[] myArray = duplicateArray(myArray);
 
+            System.out.println("ARRAY FINAL DUPS = ");
+            for (String s:duplicateArray(myArray))
+                System.out.print(s + " ");
+            System.out.println();
 
-            // Print the duplicate values
-            System.out.println("Duplicate values:");
-            for (String duplicate : duplicates) {
-                if (duplicate != null) {
-                    System.out.println(duplicate);
-                }
-            }
+            System.out.println("EX5  using Array List and compare with new ArrayList the element to be sure is not already dups---------");
+            duplicate_compareArrayList(myArray);
+
+            System.out.println("Varianta 3: keyset, add only dups");
+            duplicate_addHashMap(myArray);
         }
 
-    public static void findDuplicatesNr(String[] array) {
-        HashMap<String, Integer> stringCountMap = new HashMap<>();
+        public static String[] duplicateArray (String[] myArray)
+        {
+            //Create a HashMap with keys: array elements. This will not allow duplicates
+            // The values for the Hash Map will be the number of occurrences
 
-        // Count the occurrences of each string
-        for (String str : array) {
-            System.out.println("STR = " + str);
-            System.out.println("stringCountMap.getOrDefault(str, 0) = " + stringCountMap.getOrDefault(str, 0));
-            stringCountMap.put(str, stringCountMap.getOrDefault(str, 0) + 1);
-            System.out.println("HASHMAP in for = " + stringCountMap);
-        }
-        System.out.println("HASHMAP = " + stringCountMap);
+            HashMap<String, Integer> myHashMap = new HashMap<>();
 
-        // Iterate through the HashMap to find duplicates
-        System.out.println("final Hash = "+ stringCountMap);
-
-        System.out.println("Duplicate values:");
-        for (String key : stringCountMap.keySet()) {
-            System.out.println("stringCountMap.get(key) = " + stringCountMap.get(key));
-            if (stringCountMap.get(key) > 1) {
-                System.out.println(key + " appears " + stringCountMap.get(key) + " times.");
-            }
-        }
-    }
-        public static String[] findDuplicates(String[] array) {
-            HashMap<String, Integer> stringCountMap = new HashMap<>();
-            ArrayList<String> duplicateList = new ArrayList<>();
-
-            // Count the occurrences of each string
-            for (String str : array) {
-                stringCountMap.put(str, stringCountMap.getOrDefault(str, 0) + 1);
+            //go through the Array elements and check if the element exist in Hash Map or not
+            // if the element is not already added to the HashMap, add it with value 1( occurrence)
+            // if the element already exist in hashMap as a key, increment the occurrence
+            for (String myStr : myArray)
+            {
+                if (myHashMap.containsKey(myStr))
+                  myHashMap.put(myStr, myHashMap.get(myStr) + 1);
+                else
+                  myHashMap.put(myStr, 1);
             }
 
-            // Find duplicates and store them in a list
-            for (String key : stringCountMap.keySet()) {
-                if (stringCountMap.get(key) > 1) {
-                    duplicateList.add(key);
+            // print the hashMap to check the number of occurrences appears ok
+            System.out.println("my hashMap = " + myHashMap);
+
+            // create an ArrayList to add the keys that appears only once, and them remove them from the HashMap
+            ArrayList<String> myArrayList = new ArrayList<>();
+            for (String myHM : myHashMap.keySet())
+            {
+                if (myHashMap.get(myHM).equals(1))
+                {
+                   myArrayList.add(myHM);
                 }
             }
 
-            // Convert the list of duplicates to an array
-            String[] duplicateArray = new String[duplicateList.size()];
-            return duplicateList.toArray(duplicateArray);
+            System.out.println("ArrayList = " + myArrayList);
+            for (String s:myArrayList)
+                myHashMap.remove(s);
+
+           // Create the Array only with the HashMap keys, which are duplicates from the original Array
+            String[] duplicatesArray = new String[myHashMap.size()]; // the Array length is the same as the HashMap
+            duplicatesArray= myHashMap.keySet().toArray(duplicatesArray);
+
+            return duplicatesArray;
         }
+
+    public static void duplicate_compareArrayList(String[] myString)
+    {
+        /// redo: cand dai de al doilea duplicat, compara cu noul array care deja contine ce am gasit ca duplicates!!!!!!!
+        // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
+
+        ArrayList<String> myArrayListDups = new ArrayList<>();
+
+        for (int k=0;k<myString.length;k++)
+        {
+            for (int i=k+1;i<myString.length;i++)
+                {
+                    if (myString[k]==myString[i])
+                    {
+                       if (myArrayListDups.contains(myString[k]))
+                           continue;
+                       else
+                        myArrayListDups.add(myString[k]);
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+
+
+        System.out.println("ArrayList = ");
+        for(String s:myArrayListDups)
+            System.out.println(s + " " );
+
     }
+
+    public static void duplicate_addHashMap(String[] myString)
+    {
+        //add duplicates direct in HashMap
+        // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
+
+        HashMap<String, Integer> myHashMap = new HashMap<>();
+
+        for (int k=0;k<myString.length;k++)
+        {
+            for (int i=k+1;i<myString.length;i++)
+            {
+                if (myString[k]==myString[i])
+                {
+                    myHashMap.put(myString[k], 1);
+                }
+
+            }
+        }
+        System.out.println("HASHMAP = " + myHashMap);
+
+        System.out.println("ARRAY DUPLICATES HASH TO ARRAY: ");
+        String[] returnedDuplicatesArray = new String[myHashMap.size()];
+        returnedDuplicatesArray = myHashMap.keySet().toArray(returnedDuplicatesArray);
+        for (String s:returnedDuplicatesArray)
+            System.out.print(s + " ");
+
+    }
+
+
+}
 
