@@ -30,11 +30,14 @@ ArrayList
 
  */
 
+import java.util.List;
 import java.util.Scanner;
 
-public class ArrayList {
+public class ArrayList{
 
-       public static void main(String[] args)
+
+
+    public static void main(String[] args)
         {
             arrayListExercises();
         }

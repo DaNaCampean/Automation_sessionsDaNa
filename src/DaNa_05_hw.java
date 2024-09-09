@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+
+
 public class DaNa_05_hw {
  /*   Part 5
 
@@ -55,39 +57,120 @@ public static void main(String[] args) {
 
 // 2. Write a method countVowels(String str) that counts the number of vowels (a, e, i, o, u) in a given string.
    // String danaString = "danutzika";
-   // System.out.println("Number of Vowels = " + countVowels(danaString));
+    //System.out.println("Number of Vowels = " + countVowels(danaString));
+  //  3. Write a method areAnagrams(String str1, String str2) that checks if two given strings are anagrams
+    //  (contain the same characters in a different order).
 
-// EXTRA: SEARCH FOR DUPLICATE VALUES
-    dups();
+    areAnagrams("danutzika", "danutziak");
 
-   }
+    String str1 = "danutzika";
+    String str2 = "danutziak";
 
-   public static void dups()
-   {
-       System.out.println("duplicates exercise");
-       String[] myArray = {"dana", "didi","dana", "dana", "didi","adi", "carmen"};
-       System.out.print("My Array = " );
-       for (String mystr:myArray)
-           System.out.print(mystr + " ");
-       System.out.println();
+    // Convert strings to character arrays
+    char[] charArray1 = str1.toCharArray();
+    char[] charArray2 = str2.toCharArray();
 
-       HashMap<String, Integer> myHashMap = new HashMap<>();
-       for (String myStr:myArray)
-       {
-           if (myHashMap.get(myStr) == null)
-               myHashMap.put(myStr, 1);
-           else
-               myHashMap.put(myStr,myHashMap.get(myStr)+1);
-       }
+    // Sort the character arrays
+    Arrays.sort(charArray1);
+    Arrays.sort(charArray2);
 
-       System.out.println("my hashMap = " + myHashMap);
+    System.out.println("STR1 ===");
+    for (int i=0; i<str1.length(); i++)
+        System.out.println(charArray1[i]);
 
 
-       System.out.println("key = " + myHashMap.keySet());
-       System.out.println("values = " + myHashMap.values());
+    // Compare the sorted character arrays
+    if (Arrays.equals(charArray1, charArray2))
+        System.out.println("TTRUE");
+    else System.out.println("FFalse");
+
+   // 4. Write a method replaceCharacter(String str, char oldChar, char newChar)
+    // that replaces all occurrences of oldChar with newChar in the given string.
+  StringBuilder strB = new StringBuilder("dana");
+    System.out.println("STR B = " + strB);
+   // Char[] charD = new Char[3];
+    //strB.getChars(0,3,charD,0);
+
+   // getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+    //Characters are copied from this sequence into the destination character array dst.
+//strBuilderGetChar();
+strBuilderGetCharListDana();
+}
+
+    public static void strBuilderGetCharListDana()
+    {
+        // creating an object of the StringBuilder class
+        StringBuilder sb = new StringBuilder("DaNuTzIkA");
+        System.out.println("The given string value is: " + sb);
+        //create an array of character
+        ArrayList<Character> dst =new ArrayList<>();
+
+        //initialize the srcBegin, srcEnd, dstBegin
+        int srcBegin = 0;
+        int srcEnd = sb.length();
+        int dstBegin = 0;
+        System.out.println("\nThe values of srcBegin, srcEnd, and dstBegin are: " + srcBegin + " , " + srcEnd + " and " + dstBegin);
+
+        //using the getChars() method
+       // sb.getChars(srcBegin, srcEnd, dst, dstBegin);
+        System.out.print("The new copied character array elements are: ");
+
+       // for(int i = 0; i<dst.length; i++) {
+       //     System.out.print(dst[i] + " ");
+     //   }
+    }
+public static void strBuilderGetChar()
+{
+    // creating an object of the StringBuilder class
+    StringBuilder sb = new StringBuilder("Welcome to TutorialsPoint");
+    System.out.println("The given string value is: " + sb);
+    //create an array of character
+    char dst[] = {'A','B','z'};
+    System.out.print("The characrer array elements are: ");
+    for(int i = 0; i<dst.length; i++) {
+        System.out.print(dst[i] + " ");
+    }
+    //initialize the srcBegin, srcEnd, dstBegin
+    int srcBegin = 3;
+    int srcEnd = 6;
+    int dstBegin = 0;
+    System.out.println("\nThe values of srcBegin, srcEnd, and dstBegin are: " + srcBegin + " , " + srcEnd + " and " + dstBegin);
+    //using the getChars() method
+    sb.getChars(srcBegin, srcEnd, dst, dstBegin);
+    System.out.print("The new copied character array elements are: ");
+    for(int i = 0; i<dst.length; i++) {
+        System.out.print(dst[i] + " ");
+    }
+}
+public static void areAnagrams(String str1, String str2)
+{
+
+    HashMap<Character, Integer> hash4 = new HashMap<>();
+    HashMap<Character, Integer> hash5 = new HashMap<>();
+
+    for (int i=0;i<str1.length();i++)
+    {
+        hash4.put(str1.charAt(i),hash4.getOrDefault(str1.charAt(i),0)+1);
+
+    }
+    System.out.println("hash4 = " +hash4);
+
+    for (int i=0;i<str2.length();i++)
+    {
+        hash5.put(str2.charAt(i),hash5.getOrDefault(str2.charAt(i),0)+1);
+
+    }
+    System.out.println("hash5 = " +hash5);
 
 
-   }
+    if (hash4.equals(hash5))
+        System.out.println("TRUE ");
+    else
+        System.out.println("FALSE");
+
+
+}
+
 
    public static String reverseStringChar(String danaString)
    {
@@ -154,64 +237,4 @@ public static void main(String[] args) {
 
 
 }
-/*
- de la daniL
- public static void ex9(){
-    HashMap<String, List> ProdusePiata = new HashMap<>();
-    ProdusePiata.put("Fructe", new ArrayList<String>(Arrays.asList("mere", "pere", "prune", "caise")));
-    ProdusePiata.put("Legume", new ArrayList<String>(Arrays.asList("cartofi", "morcovi", "patrunjel", "fasole")));
-    ProdusePiata.put("Extra", new ArrayList<String>(Arrays.asList("seminte", "ingrasamant", "scule", "obiecte")));
 
-
-
-    System.out.println("\nCe produse doriti sa adaugati?: Fructe, Legume, Extra");
-    Scanner produsnou = new Scanner(System.in);
-    String pn = produsnou.nextLine();
-    if (pn.equalsIgnoreCase("Fructe")){
-        System.out.println("\nCe fruct doriti sa adaugati?");
-        Scanner fructnou = new Scanner(System.in);
-        String fructn = fructnou.nextLine();
-        List<String> arrlist = ProdusePiata.get("Fructe");
-        if (arrlist.contains(fructn)) {
-            System.out.println("\nprodusul exista deja in piata");
-        }
-        else {
-            arrlist.add(fructn);
-        }
-        System.out.println(ProdusePiata.get("Fructe"));}
-
-    else if (pn.equalsIgnoreCase("Legume"))    {
-                System.out.println("\nCe leguma doriti sa adaugati?");
-                Scanner legumanou = new Scanner(System.in);
-                String leguman = legumanou.nextLine();
-                List<String> arrlist = ProdusePiata.get("Legume");
-                if (arrlist.contains(leguman)) {
-                    System.out.println("\nprodusul exista deja in piata");
-                }
-                else {
-                    arrlist.add(leguman);
-                }
-                System.out.println(ProdusePiata.get("Legume"));
-
-        } else if (pn.equalsIgnoreCase("Extra")) {
-        System.out.println("\nCe produs extra doriti sa adaugati?");
-        Scanner extranou = new Scanner(System.in);
-        String extran = extranou.nextLine();
-        List<String> arrlist = ProdusePiata.get("Extra");
-        if (arrlist.contains(extran)) {
-            System.out.println("\nprodusul exista deja in piata");
-        }
-        else {
-            arrlist.add(extran);
-        }
-        System.out.println(ProdusePiata.get("Extra"));
-
-    }
-    else {
-        System.out.println("\nnu ati ales o optiune valida");
-    }
-
-
-}
-
-*/
