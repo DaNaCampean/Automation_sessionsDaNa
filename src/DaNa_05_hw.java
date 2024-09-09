@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 
@@ -32,24 +33,24 @@ ok - 5. Write a method isPalindrome(String str) that checks if a given string is
 ok -  6. Write a method charFrequency(String str, char c) that takes a string and a character
              as input and returns the number of times the character appears in the string.
 
-ok -7. Write a method isTermInList(List<String> list, String term) that checks if the list has an
+ok - 7. Write a method isTermInList(List<String> list, String term) that checks if the list has an
             element containing the provided term.
 
--8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
+ok - 8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
 elements containing the provided terms.
 
- 9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
+ok ???? 9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
 
- -10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
+ok  - 10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
             that checks if text contains all specified terms with an option to ignore case sensitivity.
 
-11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
+ok ???? 11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
 insert the given string in the specified text at every specified interval (distance).
 
  12. Write a method that checks if the given text contains any of the specified terms, with an option
             to ignore case sensitivity.
 
-13. Write a method that will return a specified number of random elements from a given list.
+ 13. Write a method that will return a specified number of random elements from a given list.
 
   */
 
@@ -89,47 +90,131 @@ public static void main(String[] args) {
 
    // 7. Write a method isTermInList(List<String> list, String term) that checks if the list has an
   //  element containing the provided term.
-    List<String> list = Arrays.asList("dana", "conan", "didi","conan", "dana");
+    //List<String> list = Arrays.asList("dana", "conan", "didi","conan", "dana");
    // isTermInList(list , "conan");
 
     //8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
     // elements containing the provided terms.
 
-    //9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
+   // List<String> list = Arrays.asList("dana", "conan", "didi","conan", "figaro", "dana");
+    //List<String> terms = Arrays.asList("conan", "dana");
+    //areTermsInList(list, terms);
+
+    //????????????
+    // 9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
+       // String text = "dana 123 dana 0154 j";
+     // String text = "dana123dana";
+       // String firstInt = getFirstInteger(text);
+       // System.out.println("F INT = " + Integer.parseInt(firstInt));
+       // System.out.println("FFF int = " + firstInt);
+
 
     //10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
     // that checks if text contains all specified terms with an option to ignore case sensitivity.
+   // String text = "Dana conan didI coNan dana";
+   // boolean ignoreCase = false;
+   // List<String> termsList = Arrays.asList("didi", "dana");
+    //checkIfTextContainsTerms(text, ignoreCase,termsList);
 
-    //11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
+
+    // ??????????????????    am creeat un nou string cu adaugiurile...
+    // 11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
     // insert the given string in the specified text at every specified interval (distance).
+
+    String text = "123123123 123 123";
+    String stringToBeInserted = " HAHAHA ";
+    int distance = 3;
+
+    insertStringInTextRepeatedly(text, stringToBeInserted, distance);
+
 
     //12. Write a method that checks if the given text contains any of the specified terms, with an option
     // to ignore case sensitivity.
+              //   checkTermInText (List<String> list, String term)
+
 
     //13. Write a method that will return a specified number of random elements from a given list.
-
+            // randomNumberOfRandomElements (List<String> list, String term)
 }
 
 public static void areTermsInList(List<String> list, List<String> searchedTerms)
 {
     //8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
     // elements containing the provided terms.
+   // List<String> list = Arrays.asList("dana", "conan", "didi","conan", "dana");
+    //List<String> terms = Arrays.asList("didi","conan", "dana");
+
+    System.out.println("LIST = " + list);
+    System.out.println("SEARCHED Terms = " + searchedTerms);
+    if (list.containsAll(searchedTerms))
+        System.out.println("The List contains the Searched Terms: " + searchedTerms);
+    else
+        System.out.println("The List DOES NOT contain the Searched Terms: " + searchedTerms);
 
 
 }
 
-public static void getFirstInteger(String text)
+public static String getFirstInteger(String text)
     {
 //9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
+        //String text = "dana 123 dana";
+        // String text = "dana123dana";
+
+        String[] arrayStr = text.split(" ");
+        System.out.println("ARRAY = ");
+        String firstInteger="";
+        for (String s: arrayStr)
+        {
+            System.out.println(s);
+           /* if (s.matches("\\d+"))
+                System.out.println(s + " is INT");
+            else System.out.println(s + " NOT int");
+
+            */
+
+            if (s.matches("[0-9]\\d+")) {
+                System.out.println(s + " is INT");
+                firstInteger = s;
+
+              break;
+           }
+
+        }
+      //  System.out.println("FirstInterger = " + firstInteger);
+
+          return firstInteger;
+
 
 
     }
 
-public static void checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
-    {
+public static void checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList) {
 //10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
-        // that checks if text contains all specified terms with an option to ignore case sensitivity.
+    // that checks if text contains all specified terms with an option to ignore case sensitivity.
+      /*
+        String text = "Dana conan didI coNan dana";
+        boolean ignoreCase = true;
+        List<String> termsList = Arrays.asList("didi", "dana"); */
 
+    System.out.println("String = " + text);
+    System.out.println("SEARCHED Terms = " + termsList);
+    System.out.println("IgnoreCase = " + ignoreCase);
+    boolean containsTerm = true;
+
+    for (int i=0;i<termsList.size();i++)
+        if (ignoreCase) {
+            if (!text.toLowerCase().contains(termsList.get(i).toLowerCase()))
+                containsTerm = false;
+        }
+        else {
+            if (!text.contains(termsList.get(i)))
+                containsTerm = false;
+        }
+
+    if (containsTerm)
+            System.out.println("The String Text contains the Searched Terms: " + termsList);
+    else
+            System.out.println("The String Text DOES NOT contain the Searched Terms: " + termsList);
 
     }
 
@@ -137,12 +222,64 @@ public static void insertStringInTextRepeatedly(String text, String stringToBeIn
     {
        //11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
         // insert the given string in the specified text at every specified interval (distance).
+
+       // String text = "123123123 123 123";
+       // String stringToBeInserted = " hahaha ";
+       // int distance = 3;
+
+        int iteration = 0;
+        String finalStr = "";
+
+        System.out.println("Text = " + text);
+
+        for (int i=0;i<text.length();i++)
+        {
+            System.out.println("char = " + text.charAt(i));
+
+            if (iteration == distance-1) {
+                System.out.println("if");
+                finalStr = finalStr.concat(String.valueOf(text.charAt(i)));
+                finalStr = finalStr.concat(stringToBeInserted);
+                System.out.println("final = " + finalStr);
+                iteration = 0;
+
+            }
+            else
+            {           iteration++;
+                System.out.println("else");
+                finalStr = finalStr.concat(String.valueOf(text.charAt(i)));         
+            }
+
+
+
+
+
+
+       }
+        System.out.println("STRING FINAL = " + finalStr);
+
+        
     }
 
 public static void checkTermInText (List<String> list, String term)
     {
 //12. Write a method that checks if the given text contains any of the specified terms, with an option
         // to ignore case sensitivity.
+
+            //8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
+            // elements containing the provided terms.
+
+           // List<String> list = Arrays.asList("dana", "conan", "didi","conan", "figaro", "dana");
+            //List<String> terms = Arrays.asList("conan", "dana");
+            //areTermsInList(list, terms);
+
+        //10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
+        // that checks if text contains all specified terms with an option to ignore case sensitivity.
+       // String text = "Dana conan didI coNan dana";
+        // boolean ignoreCase = false;
+        // List<String> termsList = Arrays.asList("didi", "dana");
+        //checkIfTextContainsTerms(text, ignoreCase,termsList);
+
 
 
     }
