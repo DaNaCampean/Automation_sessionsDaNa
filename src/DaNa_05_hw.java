@@ -30,19 +30,25 @@ public class DaNa_05_hw {
 
 5. Write a method isPalindrome(String str) that checks if a given string is a palindrome (reads the same forwards and backwards).
 
-            6. Write a method charFrequency(String str, char c) that takes a string and a character as input and returns the number of times the character appears in the string.
+            6. Write a method charFrequency(String str, char c) that takes a string and a character
+             as input and returns the number of times the character appears in the string.
 
-            7. Write a method isTermInList(List<String> list, String term) that checks if the list has an element containing the provided term.
+            7. Write a method isTermInList(List<String> list, String term) that checks if the list has an
+            element containing the provided term.
 
-8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has elements containing the provided terms.
+8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
+elements containing the provided terms.
 
             9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
 
-            10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList) that checks if text contains all specified terms with an option to ignore case sensitivity.
+            10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
+            that checks if text contains all specified terms with an option to ignore case sensitivity.
 
-11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will insert the given string in the specified text at every specified interval (distance).
+11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
+insert the given string in the specified text at every specified interval (distance).
 
-            12. Write a method that checks if the given text contains any of the specified terms, with an option to ignore case sensitivity.
+            12. Write a method that checks if the given text contains any of the specified terms, with an option
+            to ignore case sensitivity.
 
 13. Write a method that will return a specified number of random elements from a given list.
 
@@ -62,39 +68,17 @@ public static void main(String[] args) {
     //  (contain the same characters in a different order).
 
     areAnagrams("danutzika", "danutziak");
+    areAnagramsVar2("danutzika", "danutziak");
 
-    String str1 = "danutzika";
-    String str2 = "danutziak";
+    //strBuilderGetChar();
+//strBuilderGetCharListDana();
 
-    // Convert strings to character arrays
-    char[] charArray1 = str1.toCharArray();
-    char[] charArray2 = str2.toCharArray();
-
-    // Sort the character arrays
-    Arrays.sort(charArray1);
-    Arrays.sort(charArray2);
-
-    System.out.println("STR1 ===");
-    for (int i=0; i<str1.length(); i++)
-        System.out.println(charArray1[i]);
-
-
-    // Compare the sorted character arrays
-    if (Arrays.equals(charArray1, charArray2))
-        System.out.println("TTRUE");
-    else System.out.println("FFalse");
 
    // 4. Write a method replaceCharacter(String str, char oldChar, char newChar)
     // that replaces all occurrences of oldChar with newChar in the given string.
-  StringBuilder strB = new StringBuilder("dana");
-    System.out.println("STR B = " + strB);
-   // Char[] charD = new Char[3];
-    //strB.getChars(0,3,charD,0);
 
-   // getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
-    //Characters are copied from this sequence into the destination character array dst.
-//strBuilderGetChar();
-strBuilderGetCharListDana();
+
+
 }
 
     public static void strBuilderGetCharListDana()
@@ -141,6 +125,28 @@ public static void strBuilderGetChar()
     for(int i = 0; i<dst.length; i++) {
         System.out.print(dst[i] + " ");
     }
+}
+
+public static void areAnagramsVar2(String str1, String str2)
+{
+    // Convert strings to character arrays
+    char[] charArray1 = str1.toCharArray();
+    char[] charArray2 = str2.toCharArray();
+
+    // Sort the character arrays
+    Arrays.sort(charArray1);
+    Arrays.sort(charArray2);
+
+    System.out.println("STR1 ===");
+    for (int i=0; i<str1.length(); i++)
+        System.out.println(charArray1[i]);
+
+
+    // Compare the sorted character arrays
+    if (Arrays.equals(charArray1, charArray2))
+        System.out.println("TTRUE");
+    else System.out.println("FFalse");
+
 }
 public static void areAnagrams(String str1, String str2)
 {
