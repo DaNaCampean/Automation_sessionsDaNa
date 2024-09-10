@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class learningStrings {
 
@@ -23,6 +25,18 @@ public class learningStrings {
         String firstInteger = getFirstInteger(text);
         System.out.println("The first integer found: " + firstInteger);
 
+        //Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("[0-9]\\d*", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher("69VisitW325Schoo356ls!");
+        boolean matchFound = matcher.find();
+        if (matchFound) {
+            System.out.println("Match found");
+            System.out.println("number: " +matcher.group());
+        } else {
+            System.out.println("Match not found");
+
+
+        }
     }
 
     public static String getFirstInteger(String text) {

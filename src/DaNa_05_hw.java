@@ -2,6 +2,8 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.sql.SQLOutput;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class DaNa_05_hw {
@@ -107,9 +109,9 @@ public static void main(String[] args) {
         String text = "dana 123 dana 0154 j";
      // String text = "dana123dana";
       //  String firstInt = getFirstInteger(text);
-    String firstInt = getFirstIntegerV2(text);
-        System.out.println("F INT = " + Integer.parseInt(firstInt));
-        System.out.println("FFF int = " + firstInt);
+        getFirstIntegerV2(text);
+        //System.out.println("F INT = " + Integer.parseInt(firstInt));
+        //System.out.println("FFF int = " + firstInt);
 
 
     //10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
@@ -206,27 +208,34 @@ public static void areTermsInList(List<String> list, List<String> searchedTerms)
 
 }
 
-    public static String getFirstIntegerV2(String text)
+    public static void getFirstIntegerV2(String text)
     {
 //9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
 
-        text = "11dana331d23dana45";
+        //text = "1dana331d23dana45";
+       // text = "dana 123 d34 f 9";
+        text = "dana haha ha";
 
 
-        String[] arrayStr = text.split(" ");
-        String firstInteger="";
+        boolean found=false;
+        Pattern myPattern = Pattern.compile("[0-9]\\d*");
+        Matcher myMatcher = myPattern.matcher(text);
 
-        for (String s: arrayStr)
-        {
-            System.out.println(s);
-            if (s.matches("[0-9]\\d+")) {
-                System.out.println(s + " is INT");
-                firstInteger = s;
-                break;
-            }
+        //if (myMatcher.find())
+        while (myMatcher.find())
+         {
+             found = true;
+           System.out.println(myMatcher.group() + " is INT");
+           }
+      //  else
+          //  System.out.println("There is no INT");
 
-        }
-        return firstInteger;
+        if (!found)
+            System.out.println("There is no Number in the string");
+
+
+
+
     }
 
 public static String getFirstInteger(String text)
