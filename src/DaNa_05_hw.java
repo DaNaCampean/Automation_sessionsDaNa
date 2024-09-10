@@ -9,7 +9,9 @@ public class DaNa_05_hw {
 
     Where to learn? Varianta 1 ( part 3.4) Varianta 2 (curs Alex Prodan)
     Varianta 3 (Udemy &ndash; chapters - Primitive Types Recap and the String Data Type)
-    Java Strings & Java String Methods String class & String builder Java Regular Expressions & Pattern class
+    Java Strings & Java String Methods
+    String class & String builder
+    Java Regular Expressions & Pattern class
 
     Requirements:
 
@@ -102,11 +104,12 @@ public static void main(String[] args) {
 
     //????????????
     // 9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
-       // String text = "dana 123 dana 0154 j";
+        String text = "dana 123 dana 0154 j";
      // String text = "dana123dana";
-       // String firstInt = getFirstInteger(text);
-       // System.out.println("F INT = " + Integer.parseInt(firstInt));
-       // System.out.println("FFF int = " + firstInt);
+      //  String firstInt = getFirstInteger(text);
+    String firstInt = getFirstIntegerV2(text);
+        System.out.println("F INT = " + Integer.parseInt(firstInt));
+        System.out.println("FFF int = " + firstInt);
 
 
     //10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList)
@@ -121,12 +124,12 @@ public static void main(String[] args) {
     // 11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
     // insert the given string in the specified text at every specified interval (distance).
 
-  //  String text = "123123123 123 123";
-   // String stringToBeInserted = " HAHAHA ";
-    //int distance = 3;
+  // String text = "123123123";
+   //String stringToBeInserted = "HAHA";
+   //int distance = 3;
 
-    // insertStringInTextRepeatedly(text, stringToBeInserted, distance);
-
+     //insertStringInTextRepeatedly(text, stringToBeInserted, distance);
+    //insertStringInTextRepeatedlyVar2StrBuilder(text, stringToBeInserted, distance);
 
     //12. Write a method that checks if the given text contains any of the specified terms, with an option
     // to ignore case sensitivity.
@@ -134,8 +137,57 @@ public static void main(String[] args) {
 
 
     //13. Write a method that will return a specified number of random elements from a given list.
-           randomNumberOfRandomElements();
+           //randomNumberOfRandomElements();
+
+
+
+
 }
+
+    public static void insertStringInTextRepeatedlyVar2StrBuilder(String text, String stringToBeInserted, int distance)
+    {
+        //11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
+        // insert the given string in the specified text at every specified interval (distance).
+
+      /*  System.out.println("------VAR2 of Problem 11-----");
+        System.out.println("My String is: " + text);
+        System.out.println("String to be inserted: "+ stringToBeInserted);
+        System.out.println("Distance: " + distance);
+
+        StringBuilder myStrBuilder = new StringBuilder(text);
+        //System.out.println("My StringBuilder = " + myStrBuilder);
+        //myStrBuilder.insert(distance, stringToBeInserted);
+        //System.out.println("Final SB = " + myStrBuilder);
+        // 123123123
+        int lung = myStrBuilder.length();
+        //System.out.println("Lung = " + lung);
+        int timesInsert = lung/distance;
+       // System.out.println(" how many times = " + timesInsert);
+        int insertLung = stringToBeInserted.length();
+        int pozitie=3;
+        myStrBuilder.insert(distance, stringToBeInserted);
+      //  System.out.println("show = " + myStrBuilder);
+        for (int i=1;i<timesInsert; i++ )
+        {
+            pozitie = distance+pozitie+insertLung;
+            System.out.println("Pozitie = " +pozitie);
+            myStrBuilder.insert(pozitie, stringToBeInserted);
+           // System.out.println("show = " + myStrBuilder);
+        }
+
+        System.out.println("STRING FINAL = " + myStrBuilder);*/
+
+        StringBuilder myStrBuilder = new StringBuilder(text);
+        int timesInsert = myStrBuilder.length()/distance; // how many times the string needs to be inserted
+        int pozitie=distance;
+        myStrBuilder.insert(distance, stringToBeInserted);
+        for (int i=1;i<timesInsert; i++ )   //strarting from 1, because I already added first item
+        {
+            pozitie = distance+pozitie+stringToBeInserted.length();
+            myStrBuilder.insert(pozitie, stringToBeInserted);
+        }
+        System.out.println("STRING FINAL = " + myStrBuilder);
+    }
 
 public static void areTermsInList(List<String> list, List<String> searchedTerms)
 {
@@ -154,38 +206,50 @@ public static void areTermsInList(List<String> list, List<String> searchedTerms)
 
 }
 
+    public static String getFirstIntegerV2(String text)
+    {
+//9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
+
+        text = "11dana331d23dana45";
+
+
+        String[] arrayStr = text.split(" ");
+        String firstInteger="";
+
+        for (String s: arrayStr)
+        {
+            System.out.println(s);
+            if (s.matches("[0-9]\\d+")) {
+                System.out.println(s + " is INT");
+                firstInteger = s;
+                break;
+            }
+
+        }
+        return firstInteger;
+    }
+
 public static String getFirstInteger(String text)
     {
 //9. Write a method getFirstInteger(String text) that retrieves the first sequence of digits from a string.
         //String text = "dana 123 dana";
-        // String text = "dana123dana";
+       // text = "11dana331d23dana45";
+
 
         String[] arrayStr = text.split(" ");
-        System.out.println("ARRAY = ");
         String firstInteger="";
+
         for (String s: arrayStr)
         {
             System.out.println(s);
-           /* if (s.matches("\\d+"))
-                System.out.println(s + " is INT");
-            else System.out.println(s + " NOT int");
-
-            */
-
             if (s.matches("[0-9]\\d+")) {
                 System.out.println(s + " is INT");
                 firstInteger = s;
-
-              break;
+                break;
            }
 
         }
-      //  System.out.println("FirstInterger = " + firstInteger);
-
-          return firstInteger;
-
-
-
+         return firstInteger;
     }
 
 public static void checkIfTextContainsTerms(String text, boolean ignoreCase, List<String> termsList) {

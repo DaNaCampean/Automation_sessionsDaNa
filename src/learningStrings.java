@@ -5,12 +5,85 @@ public class learningStrings {
 
     public static void main(String[] args) {
         //substrings
-        learn_substrings("Danutzika");
+        //learn_substrings("Danutzika");
 
         //getOrder
-        areAnagrams("danutzika", "danuzikat");
+        //areAnagrams("danutzika", "danuzikat");
+
+       /* // Problem 11 from Dani
+        String text = "123123123";
+        String stringToBeInserted = "--";
+        int distance = 3;
+
+        System.out.println("TRY1 = " + try1insertStringInTextRepeatedly(text,stringToBeInserted,distance));
+        System.out.println("TRY2 = " + try2insertStringInTextRepeatedly(text,stringToBeInserted,distance));
+        System.out.println("TRY3_GOOD = " + insertStringInTextRepeatedly(text,stringToBeInserted,distance));
+*/
+        String text = "dana123dana45d";
+        String firstInteger = getFirstInteger(text);
+        System.out.println("The first integer found: " + firstInteger);
 
     }
+
+    public static String getFirstInteger(String text) {
+        StringBuilder numberBuilder = new StringBuilder();
+
+        boolean foundDigit = false;
+
+        for (char c : text.toCharArray()) {
+            if (Character.isDigit(c)) {
+                numberBuilder.append(c);
+                foundDigit = true; // Set flag indicating we've found a digit
+            } else if (foundDigit) {
+                // If we have already found a digit and hit a non-digit, we stop
+                break;
+            }
+        }
+
+        return numberBuilder.toString();
+    }
+    public static String try1insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance){
+
+        StringBuffer addedstring = new StringBuffer();
+        addedstring.append(text);
+        for (int i=0; i<text.length(); i=i+distance ) {
+            addedstring.insert(distance, stringToBeInserted);
+        }
+
+        return addedstring.substring(0);
+    }
+
+    public static String try2insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance){
+
+        StringBuffer addedstring = new StringBuffer();
+        addedstring.append(text);
+        for (int i=0; i<text.length(); i+=distance ) {
+            addedstring.insert(i, stringToBeInserted);
+        }
+
+        return addedstring.substring(0);
+    }
+
+    public static String insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance){
+
+        StringBuffer addedstring = new StringBuffer();
+        addedstring.append(text);
+
+        System.out.println("AddedString = " + addedstring);
+
+        int j = text.length()/distance;
+        System.out.println("J=" +j);
+
+        j = j*stringToBeInserted.length();
+        System.out.println("J=" +j);
+        for (int i=0; i<text.length()+j; i+=(distance+stringToBeInserted.length())) {
+            addedstring.insert(i, stringToBeInserted);
+
+        }
+
+        return addedstring.substring(0);
+    }
+
 
     public static void learn_substrings(String myString) {
         String subStr = myString.substring(1, 3); // startIndex=1, but end=3-1. 3 is the index after the last char for substring
