@@ -21,7 +21,7 @@ public class learningStrings {
         System.out.println("TRY2 = " + try2insertStringInTextRepeatedly(text,stringToBeInserted,distance));
         System.out.println("TRY3_GOOD = " + insertStringInTextRepeatedly(text,stringToBeInserted,distance));
 */
-        String text = "dana123dana45d";
+     /*   String text = "dana123dana45d";
         String firstInteger = getFirstInteger(text);
         System.out.println("The first integer found: " + firstInteger);
 
@@ -36,7 +36,28 @@ public class learningStrings {
             System.out.println("Match not found");
 
 
+        }*/
+
+        System.out.println("First Number is = " + getFirstIntDani("danadd 44 dddana45"));
+
+    }
+    public static int getFirstIntDani(String str){
+        String numarfinaldouble = "";
+        int numarfinalint = 0;
+        for (int i=0; i<str.length(); i++){
+            if (Character.isDigit(str.charAt(i))){
+                boolean firstint = false;
+                while (Character.isDigit(str.charAt(i))){
+                    numarfinaldouble = numarfinaldouble.concat(str.substring(i,i+1));
+                    i++;
+                    firstint = true;}
+                if (firstint) {
+                    break;
+                }
+            }
         }
+        numarfinalint = Integer.parseInt(numarfinaldouble);
+        return numarfinalint;
     }
 
     public static String getFirstInteger(String text) {

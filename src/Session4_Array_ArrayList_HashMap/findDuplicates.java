@@ -23,7 +23,7 @@ public class findDuplicates {
             System.out.println();
 
             //String[] myArray = duplicateArray(myArray);
-
+/*
             System.out.println("ARRAY FINAL DUPS = ");
             for (String s:duplicateArray(myArray))
                 System.out.print(s + " ");
@@ -31,9 +31,12 @@ public class findDuplicates {
 
             System.out.println("EX5  using Array List and compare with new ArrayList the element to be sure is not already dups---------");
             duplicate_compareArrayList(myArray);
-
+*/
             System.out.println("Varianta 3: keyset, add only dups");
-            duplicate_addHashMap(myArray);
+            String[] retArray = duplicate_addHashMap(myArray);
+            System.out.println("Duplicate Array: ");
+            for (String s:retArray)
+                System.out.println(" " + s);
         }
 
         public static String[] duplicateArray (String[] myArray)
@@ -111,7 +114,7 @@ public class findDuplicates {
 
     }
 
-    public static void duplicate_addHashMap(String[] myString)
+    public static String[] duplicate_addHashMap(String[] myString)
     {
         //add duplicates direct in HashMap
         // lista pt tii elementele, si apoi doar sa faci un array . lista intorci
@@ -134,9 +137,10 @@ public class findDuplicates {
         System.out.println("ARRAY DUPLICATES HASH TO ARRAY: ");
         String[] returnedDuplicatesArray = new String[myHashMap.size()];
         returnedDuplicatesArray = myHashMap.keySet().toArray(returnedDuplicatesArray);
+
         for (String s:returnedDuplicatesArray)
             System.out.print(s + " ");
-
+       return returnedDuplicatesArray;
     }
 
 

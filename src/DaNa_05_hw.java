@@ -109,7 +109,8 @@ public static void main(String[] args) {
         String text = "dana 123 dana 0154 j";
      // String text = "dana123dana";
       //  String firstInt = getFirstInteger(text);
-        getFirstIntegerV2(text);
+       // getFirstIntegerV2(text);
+          getFirstIntegerv3(text);
         //System.out.println("F INT = " + Integer.parseInt(firstInt));
         //System.out.println("FFF int = " + firstInt);
 
@@ -207,6 +208,40 @@ public static void areTermsInList(List<String> list, List<String> searchedTerms)
 
 
 }
+
+    public static void getFirstIntegerv3(String text)
+    {
+           text = "danad 23 43dddana 45";
+
+        int indexstart = 0;
+        int indexEnd = 0;
+        boolean found = false;
+
+        for (int i=0;i<text.length();i++)
+        {
+            Character c = text.charAt(i);
+            if (found)
+            {
+                if (Character.isDigit(c)) {
+                    indexEnd = i;
+                }
+                else {
+                    indexEnd = i-1;
+                    break;
+                }
+            }
+            else
+                if (Character.isDigit(c)) {
+                    found = true;
+                    indexstart = text.indexOf(c);
+                }
+        }
+        System.out.println("IndexStart = " +indexstart);
+        System.out.println("Index end = "+ indexEnd);
+        System.out.println("FirstInt = " + text.substring(indexstart,indexEnd+1));
+
+    }
+
 
     public static void getFirstIntegerV2(String text)
     {
