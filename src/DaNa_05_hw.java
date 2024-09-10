@@ -47,10 +47,10 @@ ok  - 10. Write a method checkIfTextContainsTerms(String text, boolean ignoreCas
 ok ???? 11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
 insert the given string in the specified text at every specified interval (distance).
 
- 12. Write a method that checks if the given text contains any of the specified terms, with an option
+ok 12. Write a method that checks if the given text contains any of the specified terms, with an option
             to ignore case sensitivity.
 
- 13. Write a method that will return a specified number of random elements from a given list.
+ok 13. Write a method that will return a specified number of random elements from a given list.
 
   */
 
@@ -121,20 +121,20 @@ public static void main(String[] args) {
     // 11. Write a method insertStringInTextRepeatedly(String text, String stringToBeInserted, int distance) that will
     // insert the given string in the specified text at every specified interval (distance).
 
-    String text = "123123123 123 123";
-    String stringToBeInserted = " HAHAHA ";
-    int distance = 3;
+  //  String text = "123123123 123 123";
+   // String stringToBeInserted = " HAHAHA ";
+    //int distance = 3;
 
-    insertStringInTextRepeatedly(text, stringToBeInserted, distance);
+    // insertStringInTextRepeatedly(text, stringToBeInserted, distance);
 
 
     //12. Write a method that checks if the given text contains any of the specified terms, with an option
     // to ignore case sensitivity.
-              //   checkTermInText (List<String> list, String term)
+           //   checkTermInText();
 
 
     //13. Write a method that will return a specified number of random elements from a given list.
-            // randomNumberOfRandomElements (List<String> list, String term)
+           randomNumberOfRandomElements();
 }
 
 public static void areTermsInList(List<String> list, List<String> searchedTerms)
@@ -261,10 +261,48 @@ public static void insertStringInTextRepeatedly(String text, String stringToBeIn
         
     }
 
-public static void checkTermInText (List<String> list, String term)
+public static void checkTermInText ()
     {
 //12. Write a method that checks if the given text contains any of the specified terms, with an option
         // to ignore case sensitivity.
+
+        System.out.println("Exercise 12: Write a method that checks if the given text contains any of the specified terms, with an option to ignore case sensitivity. " );
+        String text = "This is the text for problem 12";
+        List<String> specifiedTerms = new ArrayList<>();
+        specifiedTerms.add("this");
+        specifiedTerms.add("problem1");
+        boolean ignoreCase = false;
+
+        System.out.println("TEXT = " + text);
+        System.out.println("SpecifiedTerms = " +specifiedTerms);
+
+         boolean containsTerm = false;
+         ArrayList<String> listContainedTerms = new ArrayList<>();
+
+         for (int i=0;i<specifiedTerms.size();i++)
+             if (ignoreCase) {
+                 if (text.toLowerCase().contains(specifiedTerms.get(i).toLowerCase())) {
+                     containsTerm = true;
+                     listContainedTerms.add(specifiedTerms.get(i).toLowerCase());
+                 }
+             }
+             else {
+                 if (text.contains(specifiedTerms.get(i))) {
+                     containsTerm = true;
+                     listContainedTerms.add(specifiedTerms.get(i));
+                 }
+             }
+
+         if (containsTerm) {
+             System.out.println("IGNORE CASE = " + ignoreCase + ":");
+             System.out.println("The String Text contains the following Searched Terms: " + listContainedTerms + " from original list to be searched: " + specifiedTerms);
+         }
+         else {
+             System.out.println("IGNORE CASE = " + ignoreCase + ":");  
+             System.out.println("The String Text DOES NOT contain any of the Searched Terms from original list: " + specifiedTerms);
+
+         }
+
 
             //8. Write a method areTermsInList(List<String> list, List<String> searchedTerms) that checks if the list has
             // elements containing the provided terms.
@@ -284,10 +322,46 @@ public static void checkTermInText (List<String> list, String term)
 
     }
 
-public static void randomNumberOfRandomElements (List<String> list, String term)
+public static void randomNumberOfRandomElements () {
+    //13. Write a method that will return a specified number of random elements from a given list.
+
+    System.out.println("Write a method that will return a specified number of random elements from a given list.");
+    ArrayList<String> myArrayList = new ArrayList<>(List.of("dana1", "dana2", "dana3", "dana4", "dana5"));
+    int specifiedNumber = 2;
+
+   ArrayList<String> returnElements = new ArrayList<>();
+
+    int randomNumber;
+
+    for (int i=0;i<specifiedNumber; i++)
     {
-        //13. Write a method that will return a specified number of random elements from a given list.
+            randomNumber = (int) (Math.random() * 5) + 1;
+            System.out.println("Random number is: " + randomNumber);
+            returnElements.add(myArrayList.get(randomNumber-1));
     }
+
+    System.out.println("RETURNED ELEMENTS ARE: " + returnElements);
+    System.out.println();
+    returnElements.removeAll(returnElements);
+
+    System.out.println("VARIANTA 2 - fara sa fie duplicate:");
+    int nrOfElements = 0;
+    do{
+       randomNumber = (int) (Math.random() * 5) + 1;
+       System.out.println("Random number is: " + randomNumber);
+       if (!returnElements.contains(myArrayList.get(randomNumber-1)))
+        {
+            nrOfElements++;
+            returnElements.add(myArrayList.get(randomNumber-1));
+
+        }
+         
+    }while (nrOfElements!=specifiedNumber);
+
+    System.out.println("RETURNED ELEMENTS ARE: " + returnElements);
+
+}
+
 
 public static void isTermInList(List<String> list, String term)
 {
