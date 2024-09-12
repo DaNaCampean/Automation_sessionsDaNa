@@ -11,6 +11,8 @@ public class Questions_and_Answ {
     1. DIFFERENCE BETWEEN mAP AND HashmAP, List and ArrayList
     2. compareTo care e int sau equals boolean?
     3. ASK about problem 9??? dana 123 sau dana123? and 11 - cu extra string ---nope
+    4. vad in tema ca folosesti cand stringBuilder cand Buffer....e altceva decat threads/ syncronized stuff la dif intre ele?
+
 
 
      */
