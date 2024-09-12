@@ -1,5 +1,9 @@
 package Session6_StringsListsMaps;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class bubbleSort {
     // An optimized version of Bubble Sort
     static void bubbleSort(int arr[], int n)
@@ -64,7 +68,42 @@ public class bubbleSort {
             System.out.print(s + " ");
         System.out.println();
 
+        Map<String,String> personsMap = new HashMap<>();
+        personsMap.put("Ioan", "boy");
+        personsMap.put("Alina", "girl");
+        personsMap.put("Dani", "boy");
+        personsMap.put("Bogdan", "boy");
+        personsMap.put("Dana", "girl");
+        personsMap.put("Maria", "girl");
+        personsMap.put("Carmen", "girl");
+        personsMap.put("Adelina", "girl");
+        personsMap.put("Felix", "boy");
+        personsMap.put("Rodica", "girl");
 
+        // 2. Print the Map (using println)
+        System.out.println("My Map is: " + personsMap);
+
+        ArrayList<String> myListNames = new ArrayList<>();
+        myListNames.addAll(personsMap.keySet());
+        System.out.println("My List Names = " + myListNames);
+
+        int arrayListlung = myListNames.size();
+        String arrayTemp = "";
+        for(int i=0; i < arrayListlung; i++){
+            for(int j=1; j < (arrayListlung-i); j++){
+                if(myListNames.get(j-1).compareTo(myListNames.get(j))>0){
+                    //swap elements
+                    arrayTemp = myListNames.get(j-1);
+                   // myListNames.remove(j-1);
+                    myListNames.set(j-1, myListNames.get(j));
+                    //myListNames.remove(j);
+
+                    myListNames.set(j,arrayTemp);
+                }
+
+            }
+        }
+        System.out.println("MY ARRAYLLIST SORTED = " +myListNames);
 
     }
 }
