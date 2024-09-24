@@ -3,7 +3,8 @@ package Session6_StringsListsMaps;
 Exercise:
 For this exercise we need a Map<String, String> that will contain names of persons and their genres (boy or girl).
 Create the following methods:
-1. Method that allows you to populate a Map with keys and values (use Map since we need duplicates) the method should return the Map and parameters should be number of inputs :
+1. Method that allows you to populate a Map with keys and values (use Map since we need duplicates) the method
+should return the Map and parameters should be number of inputs :
 public static Map<String, String> addElementsToMap(int noOfElements)
 Where you insert each value + key from the keyboard.
 
@@ -48,13 +49,113 @@ map (by comparing two lists)
  */
 
 import java.sql.SQLOutput;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Persons_StringsListsMaps {
-    public static void main(String[] args)
+
+    public static void main(String[] args) {
+
+        Map<String, String> personsMap = new HashMap<>();
+
+        Scanner readInt = new Scanner(System.in);
+        int noOfElements=0;
+
+        while (noOfElements==0 || noOfElements <0)
+        {
+            System.out.println("Please add the number of elements you want to use in the Map:");
+            try {
+                noOfElements = readInt.nextInt();
+
+
+            }catch (Exception e)
+            {
+                System.out.println("The entered item is not a number!!! ");
+                //String myNumber1= readInt.next();
+                noOfElements=0;
+            }
+        }
+
+        noOfElements = readNoOfMapItems();
+        personsMap = addElementsToMap_method1(noOfElements);
+        System.out.println("My Map is: " + personsMap);
+        readInt.close(); // asta e problema...cand il inchid...apare eroare
+
+    }
+
+/*
+For this exercise we need a Map<String, String> that will contain names of persons and their genres (boy or girl).
+Create the following methods:
+1. Method that allows you to populate a Map with keys and values (use Map since we need duplicates) the method should return the Map
+and parameters should be number of inputs :
+public static Map<String, String> addElementsToMap(int noOfElements)
+Where you insert each value + key from the keyboard.
+*/
+
+    public static int readNoOfMapItems ()
     {
-        System.out.println("This is Main");
-        Map<String,String> personsMap = new HashMap<>();
+        Scanner readInt = new Scanner(System.in);
+        int noOfElements=0;
+
+       while (noOfElements==0 || noOfElements <0)
+        {
+            System.out.println("Please add the number of elements you want to use in the Map:");
+            try {
+                noOfElements = readInt.nextInt();
+
+
+            }catch (Exception e)
+            {
+                System.out.println("The entered item is not a number!!! ");
+                //String myNumber1= readInt.next();
+                noOfElements=0;
+            }
+        }
+
+       // readInt.close();
+        return noOfElements;
+
+    }
+    public static Map<String, String> addElementsToMap_method1(int noOfElements)
+    {
+        Scanner readInput = new Scanner(System.in);
+        Map<String, String> personsMap = new HashMap<>();
+        System.out.println("Instructions: You will need to add names and values, where values can be boy or girl." +
+                "You are requested to add "+ noOfElements + " pairs of names and gender");
+
+        String name="";
+        String gender="";
+        //String myNumber1= readInput.nextLine();
+
+        System.out.println("Number = "+noOfElements);
+        for (int i=0;i<noOfElements;i++)
+        {
+            System.out.println("Please enter the name for person " + (i+1) + " :");
+
+
+            name = readInput.nextLine();
+            System.out.println("Please enter the gender (girl or boy) for person " + (i+1) + " :");
+            gender = readInput.nextLine();
+            //check if the gender match the requirement: boy or girl, IgnoreCase
+            while (!gender.equalsIgnoreCase("girl") && !gender.equalsIgnoreCase("boy"))
+            {
+                System.out.println("The gender is not valid." +
+                        "Please enter the gender (girl or boy) for person " + (i+1) + " :");
+                gender = readInput.nextLine();
+
+            }
+            personsMap.put(name, gender);
+
+        }
+
+        readInput.close();
+        return personsMap;
+    }
+
+}
+
 /*
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Please provide the number of elements: ");
@@ -62,7 +163,7 @@ public class Persons_StringsListsMaps {
         myScanner.nextLine();
 
         // 1. Create a new Map<String, String> using method (1)
-        personsMap = addElementsToMap(noOfElements); */
+        personsMap = addElementsToMap(noOfElements);
 
         personsMap.put("Ioan", "boy");
         personsMap.put("Alina", "girl");
@@ -74,6 +175,8 @@ public class Persons_StringsListsMaps {
         personsMap.put("Adelina", "girl");
         personsMap.put("Felix", "boy");
         personsMap.put("Rodica", "girl");
+        personsMap.put("ana", "girl");
+
 
 
 
@@ -290,3 +393,4 @@ public class Persons_StringsListsMaps {
         System.out.println("All genders from the Map are: " + myMap.values());
     }
 }
+*/
