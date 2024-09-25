@@ -88,7 +88,7 @@ public class Persons_StringsListsMaps {
         System.out.println("There are " + countNoGirlsBoys_method6(gendersArrayList, "girl")+ " girls in the Map");
 
         // 9. Print the number of girls from the list using method 7
-
+        endsWithCertainLetter_method7(namesArrayList,"a");
 
         //10. Print the sorted alphabetically list of names using method 8
 
@@ -223,11 +223,11 @@ Where you insert each value + key from the keyboard.
     }
 
 // 7. Method that verifies if a name ends with a certain letter
-public static void endsWithCertainLetter_method7 (ArrayList<String> myListNames) {
+public static void endsWithCertainLetter_method7 (ArrayList<String> myListNames, String myChar) {
 
     for (String s : myListNames) {
-        if (s.endsWith("x"))
-            System.out.println(s + " ends with a");
+        if (s.endsWith(myChar))
+            System.out.println(s + " ends with " + myChar);
     }
 }
 
@@ -244,19 +244,6 @@ public static void endsWithCertainLetter_method7 (ArrayList<String> myListNames)
 }
 
 /*
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -388,26 +375,7 @@ public static void endsWithCertainLetter_method7 (ArrayList<String> myListNames)
 
 
       //  10. Method that removes a name from a list (paramters: name to remove, list from which to remove name from)
-
-
-
-
-
-        // 6. Create a list of all the genres using method(5)
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 
 }
 */
