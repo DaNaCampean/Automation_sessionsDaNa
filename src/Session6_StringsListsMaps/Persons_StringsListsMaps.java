@@ -48,7 +48,6 @@ Optional :
 map (by comparing two lists)
  */
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,34 +57,77 @@ public class Persons_StringsListsMaps {
 
     public static void main(String[] args) {
 
+        Scanner readFromKeyboard = new Scanner(System.in);
         Map<String, String> personsMap = new HashMap<>();
+        int noOfElements = readNoOfMapItems(readFromKeyboard); // read the number of elements for the Map
 
-        Scanner readInt = new Scanner(System.in);
-        int noOfElements=0;
-
-        while (noOfElements==0 || noOfElements <0)
-        {
-            System.out.println("Please add the number of elements you want to use in the Map:");
-            try {
-                noOfElements = readInt.nextInt();
+       // 1. Create a new Map<String, String> using method (1)
+        personsMap = addElementsToMap_method1(readFromKeyboard,noOfElements );
 
 
-            }catch (Exception e)
-            {
-                System.out.println("The entered item is not a number!!! ");
-                //String myNumber1= readInt.next();
-                noOfElements=0;
-            }
-        }
-
-        noOfElements = readNoOfMapItems();
-        personsMap = addElementsToMap_method1(noOfElements);
+        //2. Print the Map (using println)
         System.out.println("My Map is: " + personsMap);
-        readInt.close(); // asta e problema...cand il inchid...apare eroare
+
+        //3. Print the names from the map using method(2)
+        printNames_method2(personsMap);
+
+        //4. Print the genres from the map using method(3)
+        printGenders_method3(personsMap);
+
+        //5. Create a list of all the names using method(4)
+        ArrayList<String> namesArrayList = createArrayListNames_method4(personsMap);
+
+        //6. Create a list of all the genres using method(5)
+        ArrayList<String> gendersArrayList = createArrayListGenders_method5(personsMap);
+
+       // 7. Print the number of boys from the list using method 6
+        System.out.println("There are " + countNoGirlsBoys_method6(gendersArrayList, "boy") + " boys in the Map");
+
+
+       // 8. Print the number of girls from the list using method 6
+        System.out.println("There are " + countNoGirlsBoys_method6(gendersArrayList, "girl")+ " girls in the Map");
+
+        // 9. Print the number of girls from the list using method 7
+
+
+        //10. Print the sorted alphabetically list of names using method 8
+
+
+        //11. Print the names list without a given name
+
+        readFromKeyboard.close();
 
     }
 
-/*
+
+//Method for reading the number of Elements in the Map
+
+
+    public static int readNoOfMapItems (Scanner readInt)
+    {
+
+        int noOfElements=0;
+
+       while (noOfElements<=0) {
+               System.out.println("Please add the number of elements you want to use in the Map. The number cannot be zero or negative:");
+               try {
+                   noOfElements = readInt.nextInt();
+
+
+               } catch (Exception e) {
+                   System.out.println("The entered item is not a number!!! ");
+                   readInt.nextLine();
+                   noOfElements = 0;
+
+               }
+           }
+        readInt.nextLine();
+
+        return noOfElements;
+
+    }
+
+    /*
 For this exercise we need a Map<String, String> that will contain names of persons and their genres (boy or girl).
 Create the following methods:
 1. Method that allows you to populate a Map with keys and values (use Map since we need duplicates) the method should return the Map
@@ -93,34 +135,9 @@ and parameters should be number of inputs :
 public static Map<String, String> addElementsToMap(int noOfElements)
 Where you insert each value + key from the keyboard.
 */
-
-    public static int readNoOfMapItems ()
+    public static Map<String, String> addElementsToMap_method1(Scanner readInput, int noOfElements)
     {
-        Scanner readInt = new Scanner(System.in);
-        int noOfElements=0;
 
-       while (noOfElements==0 || noOfElements <0)
-        {
-            System.out.println("Please add the number of elements you want to use in the Map:");
-            try {
-                noOfElements = readInt.nextInt();
-
-
-            }catch (Exception e)
-            {
-                System.out.println("The entered item is not a number!!! ");
-                //String myNumber1= readInt.next();
-                noOfElements=0;
-            }
-        }
-
-       // readInt.close();
-        return noOfElements;
-
-    }
-    public static Map<String, String> addElementsToMap_method1(int noOfElements)
-    {
-        Scanner readInput = new Scanner(System.in);
         Map<String, String> personsMap = new HashMap<>();
         System.out.println("Instructions: You will need to add names and values, where values can be boy or girl." +
                 "You are requested to add "+ noOfElements + " pairs of names and gender");
@@ -133,8 +150,6 @@ Where you insert each value + key from the keyboard.
         for (int i=0;i<noOfElements;i++)
         {
             System.out.println("Please enter the name for person " + (i+1) + " :");
-
-
             name = readInput.nextLine();
             System.out.println("Please enter the gender (girl or boy) for person " + (i+1) + " :");
             gender = readInput.nextLine();
@@ -150,58 +165,48 @@ Where you insert each value + key from the keyboard.
 
         }
 
-        readInput.close();
+
         return personsMap;
     }
 
-}
-
-/*
-        Scanner myScanner = new Scanner(System.in);
-        System.out.println("Please provide the number of elements: ");
-        int noOfElements = myScanner.nextInt();
-        myScanner.nextLine();
-
-        // 1. Create a new Map<String, String> using method (1)
-        personsMap = addElementsToMap(noOfElements);
-
-        personsMap.put("Ioan", "boy");
-        personsMap.put("Alina", "girl");
-        personsMap.put("Dani", "boy");
-        personsMap.put("Bogdan", "boy");
-        personsMap.put("Dana", "girl");
-        personsMap.put("Maria", "girl");
-        personsMap.put("Carmen", "girl");
-        personsMap.put("Adelina", "girl");
-        personsMap.put("Felix", "boy");
-        personsMap.put("Rodica", "girl");
-        personsMap.put("ana", "girl");
 
 
+    // 2. Method that prints the names from a Map
+    public static void printNames_method2(Map<String, String> personsMap)
+    {
+        System.out.println("All persons from the Map are: " + personsMap.keySet());
+    }
 
+    // 3. Method that prints the genres from a Map
+    public static void printGenders_method3(Map<String, String> personsMap)
+    {
+        System.out.println("All genders from the Map are: " + personsMap.values());
+    }
 
-        // 2. Print the Map (using println)
-        System.out.println("My Map is: " + personsMap);
+    // 4. Method that takes all the names from the Map and adds them to an arrayList - return  the array list
 
-        // 3. Print the names from the map using method(2)
-        printNames(personsMap);
-        // 4. Print the genres from the map using method(3)
-        printgenders(personsMap);
-
-        // 5. Create a list of all the names using method(4)
-        // 4. Method that takes all the names from the Map and adds them to an arrayList - return  the array list
-        // 5. Method that takes all the genres from the Map and adds them to an arrayList - return the array list
+    public static ArrayList<String> createArrayListNames_method4(Map<String, String> personsMap)
+    {
         ArrayList<String> myListNames = new ArrayList<>();
-        ArrayList<String> myListGenders = new ArrayList<>();
-
         myListNames.addAll(personsMap.keySet());
-        myListGenders.addAll(personsMap.values());
-
         System.out.println("My List Names = " + myListNames);
+        return myListNames;
+
+    }
+
+    // 5. Method that takes all the genres from the Map and adds them to an arrayList - return the array list
+    public static ArrayList<String> createArrayListGenders_method5(Map<String, String> personsMap)
+    {
+
+        ArrayList<String> myListGenders = new ArrayList<>();
+        myListGenders.addAll(personsMap.values());
         System.out.println("My List genders = " + myListGenders);
+        return  myListGenders;
+    }
 
-
-      //  6. Method that counts the number of girls or boys from a list
+    // 6. Method that counts the number of girls or boys from a list
+    public static int countNoGirlsBoys_method6 (ArrayList<String> myListGenders, String gender)
+    {
         int noBoys = 0;
         int noGirls = 0;
         for (String s: myListGenders)
@@ -211,15 +216,48 @@ Where you insert each value + key from the keyboard.
             else
                 ++noBoys;
         }
-        System.out.println("no of Girls = " +noGirls);
-        System.out.println("no of boys = " + noBoys);
+        if (gender == "boy")
+            return noBoys;
+        else
+            return noGirls;
+    }
 
-      //  7. Method that verifies if a name ends with a certain letter
-        for (String s: myListNames)
-        {
-            if (s.endsWith("x"))
-                System.out.println(s + " ends with a");
-        }
+// 7. Method that verifies if a name ends with a certain letter
+public static void endsWithCertainLetter_method7 (ArrayList<String> myListNames) {
+
+    for (String s : myListNames) {
+        if (s.endsWith("x"))
+            System.out.println(s + " ends with a");
+    }
+}
+
+// 8. Method that counts the number of girls from a list (we will be using romanian names,
+    //so the rule would be, any name that ends with the letter “a”) - use method 7 inside this method
+
+
+//9. Method that sorts a list alphabetically (returns sorted list)
+
+
+//10. Method that removes a name from a list (paramters: name to remove, list from which to remove name from)
+
+
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       //  8. Method that counts the number of girls from a list (we will be using romanian names,
@@ -366,31 +404,10 @@ Where you insert each value + key from the keyboard.
 
     }
 
-    public static Map<String, String> addElementsToMap(int noOfElements) {
-        Scanner myScanner = new Scanner(System.in);
-        Map<String, String> myMap = new HashMap<>();
-        for (int i=0;i<noOfElements;i++)
-        {
-            System.out.println("Please enter the name and gender. Press enter between them: ");
-            myMap.put(readScanner(myScanner),readScanner(myScanner));
 
-        }
 
-        myScanner.close();
-        return myMap;
 
-    }
 
-    public static String readScanner (Scanner myScanner) {
-        String myString = myScanner.nextLine();
-        return myString;
-    }
 
-    public static void printNames(Map<String,String> myMap) {
-        System.out.println("All persons from the Map are: " + myMap.keySet());
-    }
-    public static void printgenders(Map<String,String> myMap) {
-        System.out.println("All genders from the Map are: " + myMap.values());
-    }
 }
 */
