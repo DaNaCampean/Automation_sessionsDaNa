@@ -48,6 +48,10 @@ Optional :
 map (by comparing two lists)
  */
 
+
+
+// scanner next...daca primim "hellow word" va lua doar hello fata de nextLine.
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -116,12 +120,12 @@ public class Persons_StringsListsMaps {
 
                } catch (Exception e) {
                    System.out.println("The entered item is not a number!!! ");
-                   readInt.nextLine();
+                 readInt.nextLine();
                    noOfElements = 0;
 
                }
            }
-        readInt.nextLine();
+       readInt.nextLine();
 
         return noOfElements;
 
@@ -200,6 +204,8 @@ Where you insert each value + key from the keyboard.
 
         ArrayList<String> myListGenders = new ArrayList<>();
         myListGenders.addAll(personsMap.values());
+
+        //sugestie: ArrayList<String> myListGenders = new ArrayList<>(personsMap.values());
         System.out.println("My List genders = " + myListGenders);
         return  myListGenders;
     }
