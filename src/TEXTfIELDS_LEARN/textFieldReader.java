@@ -20,6 +20,13 @@ import java.awt.event.ActionListener;
             // Create the button
             JButton button = new JButton("Print to Console");
             frame.add(button);
+            JButton buttonTwo = new JButton("Print to textField");
+            frame.add(buttonTwo);
+            JTextField textFieldtWO = new JTextField(15);
+            frame.add(textFieldtWO);
+
+            JButton exitButton = new JButton("EXIT");
+            frame.add(exitButton);
 
             // Add action listener to the button
             button.addActionListener(new ActionListener() {
@@ -28,6 +35,29 @@ import java.awt.event.ActionListener;
                     // Get the text from the text field and print it to the console
                     String text = textField.getText();
                     System.out.println(text);
+
+                }
+            });
+
+            // Add action listener to the button
+            buttonTwo.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Get the text from the text field and print it to the console
+                    String text = textField.getText();
+                    textFieldtWO.setText(text);
+
+                }
+            });
+            exitButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("You pressed exit!");
+                   // frame.setVisible(false);
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
                 }
             });
 
