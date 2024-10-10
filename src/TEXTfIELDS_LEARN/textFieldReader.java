@@ -28,7 +28,7 @@ import java.awt.event.ActionListener;
             JButton exitButton = new JButton("EXIT");
             frame.add(exitButton);
 
-            // Add action listener to the button
+            // Add action listener to the button "print to console"
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -39,7 +39,7 @@ import java.awt.event.ActionListener;
                 }
             });
 
-            // Add action listener to the button
+            // Add action listener to the button "print to text field"
             buttonTwo.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -49,12 +49,18 @@ import java.awt.event.ActionListener;
 
                 }
             });
+
+            // Add action listener to the button "EXIT"
             exitButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println("You pressed exit!");
                    // frame.setVisible(false);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                      //  frame.dispose();
+                    System.exit(0);
+
+
 
 
 
