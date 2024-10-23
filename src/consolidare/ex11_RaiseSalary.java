@@ -1,6 +1,10 @@
 package consolidare;
 
 public class ex11_RaiseSalary {
+    public static void main (String args[]){
+
+    }
+
 }
 /*
 

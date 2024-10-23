@@ -1,6 +1,10 @@
 package consolidare;
 
 public class ex14_ShopDiscount {
+    public static void main (String args[]){
+
+    }
+
 }
 /*
 

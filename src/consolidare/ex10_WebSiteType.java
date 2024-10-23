@@ -1,6 +1,10 @@
 package consolidare;
 
 public class ex10_WebSiteType {
+    public static void main (String args[]){
+
+    }
+
 }
 /*
 6 The variables have to be defined, but in this challenge they will be defined for you. All you have to do is check the variables, do some string to integer

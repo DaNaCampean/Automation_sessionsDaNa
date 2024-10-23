@@ -1,6 +1,10 @@
 package consolidare;
 
 public class ex6_VariablesStuff {
+    public static void main (String args[]){
+
+    }
+
 }
 
 /*
