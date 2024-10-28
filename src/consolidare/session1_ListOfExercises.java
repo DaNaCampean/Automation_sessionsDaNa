@@ -14,6 +14,12 @@ package consolidare;
 6 The variables have to be defined, but in this challenge they will be defined for you. All you have to do is check the variables, do some string to integer
 conversions, use some if conditions, and apply the arithmetic operation.
 
+int dana1 , dana2;
+print dana...
+String st1, st2;
+str1=6
+
+
 7 Write a program called CheckOddEven which prints "Odd Number" if the int variable "number" is odd, or "Even Number" otherwise. The program shall always print "bye!" before exiting.
 
 8 Write a program which does the following:
@@ -31,7 +37,11 @@ Compare age and voting_age using the syntax given above and output the following
 .org – organization website
 .in – Indian website
 
-11 Complete the following program to determine the raise and new salary for an employee by adding if ... else statements to compute the raise. The input to the program includes the current annual salary for the employee and a number indicating the performance rating (1=excellent, 2=good, and 3=poor). An employee with a rating of 1 will receive a 6% raise, an employee with a rating of 2 will receive a 4% raise, and one with a rating of 3 will receive a 1.5% raise.
+11 Complete the following program to determine the raise and new salary for an employee by adding if ... else
+ statements to compute the raise.
+ The input to the program includes the current annual salary for the
+  employee and a number indicating the performance rating (1=excellent, 2=good, and 3=poor).
+   An employee with a rating of 1 will receive a 6% raise, an employee with a rating of 2 will receive a 4% raise, and one with a rating of 3 will receive a 1.5% raise.
 
 12 Write a program to take input age of male or Female and check he/she is eligible for marriage or not.
 

@@ -1,7 +1,29 @@
 package consolidare;
 
+import java.util.HashMap;
+import java.util.Scanner;
+
+// 9 Write a Java program to find out the day of the week given the number [1 for Monday, 2 for Tuesday … and so on!]
+
 public class ex9_DaysOfWeek {
     public static void main (String args[]){
+
+
+
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter a number");
+        HashMap<Integer,String> monthsHash = new HashMap<>();
+        monthsHash.put(1, "Monday");
+        monthsHash.put(2, "Tuesday");
+        monthsHash.put(3, "Wednesday");
+
+
+        System.out.println("MyHash = " + monthsHash);
+
+        System.out.println("Please enter the number");
+        int myYear = myScanner.nextInt();
+        myScanner.nextLine();
+        System.out.println("The choosed day is: " + monthsHash.get(myYear));
 
     }
 
