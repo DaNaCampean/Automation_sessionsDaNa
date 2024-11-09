@@ -4,6 +4,56 @@ public class listOfEx2 {
 
     /*
 
+
+
+k - 1. problema pusa pe chat deja
+
+k - 2. Write a Java program to find the k largest elements in a given array.
+The parameters are: k and the array (both should be read from the console)
+
+k - 3. Write a Java program:
+- to read a string formed by digits
+- check if the number is a positive number
+- repeatedly add all its digits until the result has only one digit
+
+k - Java Collection : ArrayList - Exercises:
+4. Write a Java program to trim the capacity of an array list the current list size
+5. Write a Java program how to Convert a ArrayList to HashSet
+
+k - Java : String - Exercises
+6. Write a program to String comparison using Collator and String classes
+7. Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement
+8. Write a program to separate all tokens (words) using StringTokenizer
+
+Java : DateTime - Exercises
+9. Write a Java program to calculate the difference between two dates in days
+10. Write a Java program to compute the difference between two datetime (Hours, Minutes, Milliseconds, Seconds and Nanoseconds)
+11. Write a Java program to convert a string to date
+
+Java : Lambda Expression - Exercises
+12. Write a Java program using Lambda Expression to convert a list of strings to uppercase and lowercase
+13. Write a Java program using Lambda Expression to remove duplicates from a list of integers
+14. write a Java program using Lambda Expression to sort the strings based on their lengths in ascending order
+
+k - Array List -Practice-IT
+15. BJP5 Exercise 10.2: swapPairs:
+Write a method swapPairs that switches the order of values in an ArrayList of Strings in a pairwise fashion. Your method should switch the order of the first two values, then switch the order of the next two, switch the order of the next two, and so on. For example, if the list initially stores these values: {"four", "score", "and", "seven", "years", "ago"} your method should switch the first pair, "four", "score", the second pair, "and", "seven", and the third pair, "years", "ago", to yield this list: {"score", "four", "seven", "and", "ago", "years"}
+If there are an odd number of values in the list, the final element is not moved. For example, if the original list had been: {"to", "be", "or", "not", "to", "be", "hamlet"} It would again switch pairs of values, but the final value, "hamlet" would not be moved, yielding this list: {"be", "to", "not", "or", "be", "to", "hamlet"}
+16. BJP5 Exercise 10.17: interleave:
+Write a method called interleave that accepts two ArrayLists of integers a1 and a2 as parameters and inserts the elements of a2 into a1 at alternating indexes. If the lists are of unequal length, the remaining elements of the longer list are left at the end of a1. For example, if a1 stores [10, 20, 30] and a2 stores [4, 5, 6, 7, 8], the call of interleave(a1, a2); should change a1 to store [10, 4, 20, 5, 30, 6, 7, 8]. If a1 had stored [10, 20, 30, 40, 50] and a2 had stored [6, 7, 8], the call of interleave(a1, a2); would change a1 to store [10, 6, 20, 7, 30, 8, 40, 50].
+
+Java : EnumSet Collection - Exercises:
+k - 17. Write a Java program to get the size of the EnumSet collection
+k - 18. Write a Java program to Remove Elements of an EnumSet collection that does not exist in another EnumSet collection
+
+Java Collection : HashMap - Exercises:
+k -19. Write a Java program to test if a map contains a mapping for the specified value
+
+Java Collection : HashSet - Exercises
+k - 20. Write a Java program to Check whether a HashSet contains a specified item or not
+
+
+
  1) Write a Java program to find the k largest elements in a given array.
 parametrii sunt k (userul poate spune cate elemente vrea sa ii afiseze) si array-ul
 
@@ -27,6 +77,19 @@ Exemplu pt 1)
 					  19    13   2   4 5  8
 					                      |
 										  3
+
+lista de toate:
+3 2 19
+3 2 13
+3 2 2
+3 5 4
+3 5 5
+3 5 8 3
+3 8
+3 12
+3 14
+3 1
+
 
 se va afisa 3 -> 5 -> 8 -> 3
 
@@ -121,51 +184,6 @@ nota: nu am scris dar si 3 -> 8 si 3 -> 12 si 3 -> 14 sunt ramuri numai ca nu le
 
 aici va afisa 3 -> 2 -> 20 si nu va scoate ramura duplicata.
 
-
-
-    1. problema pusa pe chat deja
-2. Write a Java program to find the k largest elements in a given array.
-The parameters are: k and the array (both should be read from the console)
-3. Write a Java program:
-- to read a string formed by digits
-- check if the number is a positive number
-- repeatedly add all its digits until the result has only one digit
-
-Java Collection : ArrayList - Exercises:
-4. Write a Java program to trim the capacity of an array list the current list size
-5. Write a Java program how to Convert a ArrayList to HashSet
-
-Java : String - Exercises
-6. Write a program to String comparison using Collator and String classes
-7. Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement
-8. Write a program to separate all tokens (words) using StringTokenizer
-
-Java : DateTime - Exercises
-9. Write a Java program to calculate the difference between two dates in days
-10. Write a Java program to compute the difference between two datetime (Hours, Minutes, Milliseconds, Seconds and Nanoseconds)
-11. Write a Java program to convert a string to date
-
-Java : Lambda Expression - Exercises
-12. Write a Java program using Lambda Expression to convert a list of strings to uppercase and lowercase
-13. Write a Java program using Lambda Expression to remove duplicates from a list of integers
-14. write a Java program using Lambda Expression to sort the strings based on their lengths in ascending order
-
-Array List -Practice-IT
-15. BJP5 Exercise 10.2: swapPairs:
-Write a method swapPairs that switches the order of values in an ArrayList of Strings in a pairwise fashion. Your method should switch the order of the first two values, then switch the order of the next two, switch the order of the next two, and so on. For example, if the list initially stores these values: {"four", "score", "and", "seven", "years", "ago"} your method should switch the first pair, "four", "score", the second pair, "and", "seven", and the third pair, "years", "ago", to yield this list: {"score", "four", "seven", "and", "ago", "years"}
-If there are an odd number of values in the list, the final element is not moved. For example, if the original list had been: {"to", "be", "or", "not", "to", "be", "hamlet"} It would again switch pairs of values, but the final value, "hamlet" would not be moved, yielding this list: {"be", "to", "not", "or", "be", "to", "hamlet"}
-16. BJP5 Exercise 10.17: interleave:
-Write a method called interleave that accepts two ArrayLists of integers a1 and a2 as parameters and inserts the elements of a2 into a1 at alternating indexes. If the lists are of unequal length, the remaining elements of the longer list are left at the end of a1. For example, if a1 stores [10, 20, 30] and a2 stores [4, 5, 6, 7, 8], the call of interleave(a1, a2); should change a1 to store [10, 4, 20, 5, 30, 6, 7, 8]. If a1 had stored [10, 20, 30, 40, 50] and a2 had stored [6, 7, 8], the call of interleave(a1, a2); would change a1 to store [10, 6, 20, 7, 30, 8, 40, 50].
-
-Java : EnumSet Collection - Exercises:
-17. Write a Java program to get the size of the EnumSet collection
-18. Write a Java program to Remove Elements of an EnumSet collection that does not exist in another EnumSet collection
-
-Java Collection : HashMap - Exercises:
-19. Write a Java program to test if a map contains a mapping for the specified value
-
-Java Collection : HashSet - Exercises
-20. Write a Java program to Check whether a HashSet contains a specified item or not
 
 
      */

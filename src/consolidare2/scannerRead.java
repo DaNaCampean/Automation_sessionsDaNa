@@ -2,9 +2,9 @@ package consolidare2;
 
 import java.util.Scanner;
 
-public class scannerReadInteger {
+public class scannerRead {
     public static int readInteger(Scanner myScanner){
-        System.out.println("I am in scannerReadInteger Class");
+        System.out.println("I am in scannerRead  Class");
         int number = myScanner.nextInt();
         return number;
     }
