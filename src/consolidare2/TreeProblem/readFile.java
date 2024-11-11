@@ -12,7 +12,10 @@ public class readFile {
         System.out.println("The content of the file is:");
         ArrayList<String> myArrayList = new ArrayList<>();
         try {
-            File myObj = new File("/Users/danacampean/IdeaProjects/DaNaCampean_sessions/src/consolidare2/TreeProblem/treeFile");
+          //  File myObj = new File("/Users/danacampean/IdeaProjects/DaNaCampean_sessions/src/consolidare2/TreeProblem/treeFile");
+            File myObj = new File("D:\\Backup Softvision\\AUTOMATION STUFF\\Automation_sessionsDaNa\\src\\consolidare2\\TreeProblem\\treeFile");
+
+
             Scanner myReader = new Scanner(myObj);
 
             while (myReader.hasNextLine()) {
