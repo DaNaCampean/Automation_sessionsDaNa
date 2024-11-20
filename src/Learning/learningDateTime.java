@@ -1,4 +1,36 @@
-package consolidare2;
+package Learning;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+
+public class learningDateTime {
+
+    public static void main (String[] args){
+        int style = DateFormat.MEDIUM;
+        //Also try with style = DateFormat.FULL and DateFormat.SHORT
+        Date date = new Date();
+        DateFormat df;
+        df = DateFormat.getDateInstance(style, Locale.UK);
+        System.out.println("United Kingdom: " + df.format(date));
+        df = DateFormat.getDateInstance(style, Locale.US);
+        System.out.println("USA: " + df.format(date));
+        df = DateFormat.getDateInstance(style, Locale.FRANCE);
+        System.out.println("France: " + df.format(date));
+        df = DateFormat.getDateInstance(style, Locale.ITALY);
+        System.out.println("Italy: " + df.format(date));
+        df = DateFormat.getDateInstance(style, Locale.JAPAN);
+        System.out.println("Japan: " + df.format(date));
+
+    }
+
+    }
 /*
 Java : DateTime - Exercises
 9. Write a Java program to calculate the difference between two dates in days
@@ -7,15 +39,14 @@ Java : DateTime - Exercises
 */
 /*
 Java Dates
-Java does not have a built-in Date class, but we can import the java.time package to work with the date and time API.
-The package includes many date and time classes. For example:
+Java does not have a built-in Date class, but we can import the java.time package to work with the date and time API. The package includes many date and time classes. For example:
 
 Class	Description
 LocalDate	Represents a date (year, month, day (yyyy-MM-dd))
 LocalTime	Represents a time (hour, minute, second and nanoseconds (HH-mm-ss-ns))
 LocalDateTime	Represents both a date and a time (yyyy-MM-dd-HH-mm-ss-ns)
 DateTimeFormatter	Formatter for displaying and parsing date-time objects
-*/
+*//*
 
 import javax.swing.*;
 import java.text.DateFormat;
@@ -31,78 +62,46 @@ import java.util.Locale;
 import java.util.Scanner;
 
 
-public class ex9_10_11_DateAndTime {
-    public static void main(String[] args) throws ParseException {
-// simpledate format info: https://www.digitalocean.com/community/tutorials/java-simpledateformat-java-date-format
-        //Display Current Date
-        LocalDate myLocalDate = LocalDate.now(); // Create a date object
-        System.out.println(myLocalDate); // Display the current date
+    public class ex9_10_11_DateAndTime {
+        public static void main(String[] args) throws ParseException {
 
-        //Display Current Time
-        LocalTime myLocalTime = LocalTime.now();
-        System.out.println(myLocalTime);
+            //Display Current Date
+            LocalDate myLocalDate = LocalDate.now(); // Create a date object
+            System.out.println(myLocalDate); // Display the current date
 
-        //Display current Date and time
-        LocalDateTime myLocalDateTime = LocalDateTime.now();
-        System.out.println(myLocalDateTime);
+            //Display Current Time
+            LocalTime myLocalTime = LocalTime.now();
+            System.out.println(myLocalTime);
 
-        //9. Write a Java program to calculate the difference between two dates in days
+            //Display current Date and time
+            LocalDateTime myLocalDateTime = LocalDateTime.now();
+            System.out.println(myLocalDateTime);
 
-        String date1 = "November 9, 2024";
-        String date2 = "November 3, 2024";
+            //9. Write a Java program to calculate the difference between two dates in days
 
-        // 10. Write a Java program to compute the difference between two datetime (Hours, Minutes, Milliseconds, Seconds and Nanoseconds)
+            String date1 = "November 9, 2024";
+            String date2 = "November 3, 2024";
 
-
-        //11. Write a Java program to convert a string to date
-        String dateToConvert = "November 9, 2024";
-        String pattern = "MM-dd-yyyy";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format(new Date());
-        System.out.println("TEMA = " + date);
-
-        // Define the input string
-        String dateString = "2023-10-05";
-
-        // Define the date format that matches the input string
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-        try {
-            // Parse the string to create a Date object
-            Date dateD = formatter.parse(dateString);
-            System.out.println("Date converted from string: " + dateD);
-        } catch (ParseException e) {
-            // Handle the exception in case of an invalid format
-            System.out.println("Error parsing date: " + e.getMessage());
-        }
+            // 10. Write a Java program to compute the difference between two datetime (Hours, Minutes, Milliseconds, Seconds and Nanoseconds)
 
 
+            //11. Write a Java program to convert a string to date
+            String dateToConvert = "November 9, 2024";
 
-/*
-        String dateInString = "Tue, 12 Nov 2024";
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy", Locale.ENGLISH);
-        LocalDate dateTime = LocalDate.parse(dateInString, formatter);
-        System.out.println("DATE = " + dateTime);
-/*
-        System.out.println("TEST");
-        String pattern = "MM-dd-yyyy";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("en", "US"));
-        SimpleDateFormat simpleDateFormatuk = new SimpleDateFormat(pattern, new Locale("uk", "UK"));
-        String date11 = simpleDateFormat.format(new Date());
-        String date111 = simpleDateFormatuk.format(new Date());
-        System.out.println("USA = " + date11);
-        System.out.println("uk = " + date111);
+            String dateInString = "Tue, 12 Nov 2024";
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy", Locale.ENGLISH);
+            LocalDate dateTime = LocalDate.parse(dateInString, formatter);
+            System.out.println("DATE = " + dateTime);
 
+            LocalDate date = LocalDate.parse("2018-05-05");
 
-       // LocalDate date = LocalDate.parse("2018-05-05");
+            //A similar approach to the above can be used to convert a String to a java.time.LocalDateTime:
 
-        //A similar approach to the above can be used to convert a String to a java.time.LocalDateTime:
-
-        LocalDateTime dateTime1 = LocalDateTime.parse("2018-05-05T11:50:55");
-        System.out.println("DATE = " + dateTime1);
-        DateTimeFormatter formatter1= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z");
-        ZonedDateTime zonedDateTime = ZonedDateTime.parse("2015-05-05 10:15:30 Europe/Paris", formatter1);
-        System.out.println("DATE = " + zonedDateTime);
+            LocalDateTime dateTime1 = LocalDateTime.parse("2018-05-05T11:50:55");
+            System.out.println("DATE = " + dateTime1);
+            DateTimeFormatter formatter1= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z");
+            ZonedDateTime zonedDateTime = ZonedDateTime.parse("2015-05-05 10:15:30 Europe/Paris", formatter1);
+            System.out.println("DATE = " + zonedDateTime);
 
 //conversie la timezone.
 
@@ -166,6 +165,3 @@ public class ex9_10_11_DateAndTime {
         System.out.println("date2 = " + mydate2);
 
 */
-    }
-
-}
