@@ -60,7 +60,7 @@ public class ex5_AritmeticOperations {
         // Add action listener to the button ADD
         buttonAdd.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed1(ActionEvent e) {
                 // Get THE NUMBERS FROM TEXT FIELDS AND APPLY + operation
                 int sum = Integer.parseInt(textField1.getText()) + Integer.parseInt(textField2.getText());
                 textFieldResult.setText(String.valueOf(sum));

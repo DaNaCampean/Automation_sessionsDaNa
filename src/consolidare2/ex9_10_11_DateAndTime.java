@@ -71,6 +71,26 @@ public class ex9_10_11_DateAndTime {
         ZonedDateTime zonedDateTime = ZonedDateTime.parse("2015-05-05 10:15:30 Europe/Paris", formatter1);
         System.out.println("DATE = " + zonedDateTime);
 
+//conversie la timezone.
+
+    /*    //simpleDate format use that. ctrl+click pt documentatie..
+        // calendar- e cel mai complex/ check diferente intre ele.
+        //day offset stufff........
+    read ovveride vs overload - read             about it
+
+
+                aia din calculator overide e ca am acelasi nume, aia cu action stuff...nu e predefinit e numele ales de mine........
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        regex101.com
+
+     */
+     */
+     */
+    *//
+
 
         /*
        // By Using the Scanner Class
