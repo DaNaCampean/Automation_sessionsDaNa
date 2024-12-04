@@ -117,10 +117,14 @@ public class ex9_10_11_DateAndTime {
             throw new RuntimeException(e);
         }
 
-        regex101.com
+        regex101.com vezi ce e cu groups...
+        shift shift
+        ctrl+ click
+ */
 
 
-    */
+
+
 
 
         /*
