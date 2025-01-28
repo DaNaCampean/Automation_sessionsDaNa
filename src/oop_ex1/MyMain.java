@@ -1,6 +1,6 @@
 package oop_ex1;
 
-public class myMain {
+public class MyMain {
 
     public static void main( String[] args) {
 
@@ -10,7 +10,7 @@ public class myMain {
 
         //metoda 2: cu constrictor
 
-        student myStudent = new student("DaNa");
+        Student myStudent = new Student("DaNa");
         myStudent.setGrade(101);
         myStudent.displayStudent();
 
@@ -66,6 +66,18 @@ public class myMain {
 
         // cu 105 da rezultat zero
 
+        //problem 3: Create multiple Car objects and call displayDetails() for each.
+        Car myCar = new Car("Mercedes", "C180", 1995);
+        myCar.displayDetails();
+
+        Car myHummer = new Car("Hummer", "H1", 2010);
+        myHummer.displayDetails();
+
+        Car myMustang = new Car("Ford", "Mustang", 1855);
+        myMustang.displayDetails();
+
+
+
     }
 
         /*
@@ -75,6 +87,8 @@ Create a Student object.
 Set the grade using the setter method.
 Display the student details using displayStudent().}
          */
+
+
 
 
 }

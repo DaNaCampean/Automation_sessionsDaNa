@@ -9,6 +9,7 @@ public class MyMain {
         studentObject.setGrade(10);
         studentObject.setGrade(15);
         studentObject.displayStudent();
+        
 
     }
 

@@ -15,13 +15,13 @@ Set the grade using the setter method.
 Display the student details using displayStudent().
  */
 
-public class student {
+public class Student {
 
     String name;
     private int grade;
    // boolean value = true;
 // constructorul pt varianta din main cu nota asta:
-  public student(String name){
+  public Student(String name){
         this.name = name;
         //asta e constructor/ metoda simpla
 
