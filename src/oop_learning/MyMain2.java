@@ -2,6 +2,8 @@ package oop_learning;
 
 public class MyMain2 {
 
+}
+/*
         public static void main(String[] args) {
 // Initialize movies
             Movie ep5 = new Movie();
@@ -15,6 +17,8 @@ public class MyMain2 {
             ep6.setName("Star Wars: Episode VI - Return of the Jedi"); ep6.setScore(8.3);
             ep6.setYear(1983);
             ep6.setLength(131);
+
+
 // Compare ep4 and ep5 System.out.printf(
             """
             ep4, ep5 comparisons:
@@ -33,3 +37,4 @@ public class MyMain2 {
 // Sort and print the series series.sort(); series.print();
         } }
 }
+*/

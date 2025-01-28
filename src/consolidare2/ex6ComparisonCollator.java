@@ -11,7 +11,7 @@ The compareTo method of the String class is also used to compare two strings. Th
 rESULT CAN be 0, <0, >0.
 less than 0, it means that s1 comes before s2.
 reater than 0, it means that s1 comes after s2.
- equal to 0, it means that s1 and s2 are the same strings.
+ equal to 0, it means that s1 and s2 are the saprobleme strings.
 
  */
 
