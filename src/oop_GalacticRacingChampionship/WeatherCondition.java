@@ -1,4 +1,4 @@
 package oop_GalacticRacingChampionship;
 
-public class WeatherCondition {
-}
+//public class WeatherCondition {
+//}

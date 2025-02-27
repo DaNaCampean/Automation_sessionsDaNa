@@ -1,5 +1,5 @@
 package oop_GalacticRacingChampionship;
-
+/*
 public abstract class SpaceCar {
     String name;
     double fuelCapacity;
@@ -20,4 +20,4 @@ public abstract class SpaceCar {
     }
 
 
-}
+}*/

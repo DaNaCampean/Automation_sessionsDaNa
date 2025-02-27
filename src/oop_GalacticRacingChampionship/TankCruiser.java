@@ -1,4 +1,4 @@
 package oop_GalacticRacingChampionship;
 
-public class TankCruiser {
-}
+//public class TankCruiser {
+//}
