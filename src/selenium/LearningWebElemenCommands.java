@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class LearningWebElemenCommands {
 
@@ -19,13 +21,23 @@ public class LearningWebElemenCommands {
         WebElement firstNameInput = driver.findElement(By.id("firstname"));
         firstNameInput.sendKeys("DaNa");
 
-        WebElement firstNameInput1 = driver.findElement(By.id("lastname"));
-        firstNameInput.clear();
+       WebElement firstNameInput1 = driver.findElement(By.id("lastname"));
+        firstNameInput1.sendKeys("Didi");
+     //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
+
+        Thread.sleep(3000);
+        try{
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+       firstNameInput.clear();
 
 
 
 
-      //  driver.quit();
+
+       // driver.quit();
 
 
 
