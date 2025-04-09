@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
+import java.util.List;
 
 
 public class LearningWebElemenCommands {
@@ -28,9 +28,15 @@ public class LearningWebElemenCommands {
         firstNameInput1.sendKeys("Didi");
      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
 
+        //MERG AMBELE????????
+        WebElement emailText = driver.findElement(By.cssSelector("#email"));
+        emailText.sendKeys("testEmailAdd");
+
+        WebElement emailText2 = driver.findElement(By.cssSelector("input[id='email']"));
+        emailText2.sendKeys("varianta 2");
 
         try{
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -38,10 +44,12 @@ public class LearningWebElemenCommands {
          firstNameInput.clear();
         //click on element ... text field
 
-        WebElement emailText = driver.findElement(By.id("email"));
+
+
+
 
        // erroare ????
-
+/*
         WebElement typeHereButton = driver.findElement(By.name("B1"));
         typeHereButton.click();
 
@@ -51,6 +59,14 @@ public class LearningWebElemenCommands {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+*/
+        // findElements by tagname
+
+       List<WebElement> tagNameFind = driver.findElements(By.tagName("inputss"));
+       if (tagNameFind.size()!=0)
+           System.out.println("List found = " + tagNameFind.size() + "times") ;
+       else
+           System.out.println("No tagName foud");
 
 
 

@@ -22,7 +22,7 @@ public class WebElementActions {
 //The firstName input text box:
         WebElement firstNameInput = driver.findElement(By.id("firstname"));
 //Submit button
-        WebElement submitButton = driver.findElement(By.xpath("//table[@summary='Button testcases']//button[@type='submit']"));
+        WebElement submitButton = driver.findElement(By.xpath("//table[@summary='Button test cases']//button[@type='submit']"));
 //Radio Button 1
         WebElement radioButton1 = driver.findElement(By.id("rbutton1"));
 //Label for First Name input
