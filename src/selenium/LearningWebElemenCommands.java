@@ -1,5 +1,6 @@
 package selenium;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +15,8 @@ public class LearningWebElemenCommands {
 
 
         System.out.println("STARTTTTTTTTTTTTTTTTTT");
-        System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
-        //System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www-archive.mozilla.org/projects/ui/accessibility/unix/testcase/html/");
@@ -44,14 +45,16 @@ public class LearningWebElemenCommands {
          firstNameInput.clear();
         //click on element ... text field
 
-
+// ?????????????? de unde stii care web elem e cel mai ok de folosit? cand poti folosi mai multe?
 
 
 
        // erroare ????
-/*
+
         WebElement typeHereButton = driver.findElement(By.name("B1"));
         typeHereButton.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
 
 
         try{
@@ -59,7 +62,7 @@ public class LearningWebElemenCommands {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-*/
+
         // findElements by tagname
 
        List<WebElement> tagNameFind = driver.findElements(By.tagName("inputss"));
