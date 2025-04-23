@@ -1,13 +1,20 @@
 package selenium;
 
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.Keys;
 
+import static org.testng.Assert.assertEquals;
+
+
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.internal.Require.state;
 
 public class HW_01_emag {
 
@@ -15,11 +22,20 @@ public class HW_01_emag {
 
 
         System.out.println("STARTTTTTTTTTTTTTTTTTT");
-       // System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
-         System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
+       //  System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://emag.ro");
+        //asserts
+
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "eMAG.ro - Căutarea nu se oprește niciodată";
+        assertEquals(actualTitle, expectedTitle);
+        System.out.println("ASSERT OK");
+        String expectedTitle1 = "eMAG.ă";
+        assertEquals(actualTitle, expectedTitle);
+        System.out.println("ASSERT upsssss");
 
         //  WebElement firstNameField = driver.findElement(By.id("firstname"));
         WebElement searchField = driver.findElement(By.id("searchboxTrigger"));
@@ -31,16 +47,10 @@ public class HW_01_emag {
 
 // Așteaptă pentru rezultate
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        // Găsește toate aspiratoarele listate utilizând XPath
+        // XPATH - search for aspiratoare
         List<WebElement> aspirators = driver.findElements(By.xpath("//div[@class='card-item card-standard js-product-data js-card-clickable']/a"));
 
-        // Verifică dacă există suficiente rezultate
-        if (aspirators.size() >= 3) {
-            // Selectează al treilea aspirator
-            aspirators.get(2).click();
-        } else {
-            System.out.println("Nu au fost găsite suficiente rezultate.");
-        }
+
        // WebElement productCard = driver.findElement(By.xpath("//div[@class='card-item card-standard js-product-data js-card-clickable ' and @data-product-id='3300004']"));
        //  WebElement productCard = driver.findElement(By.xpath("//div[@class='card-item card-standard js-product-data js-card-clickable ' and @data-product-id='3300004']"));
         WebElement productCard = driver.findElement(By.xpath("//div[@class = 'card-item card-standard js-product-data js-card-clickable '][3]"));
@@ -52,11 +62,44 @@ public class HW_01_emag {
             System.out.println("Element found by className");
 //Closing
 
-       driver.get("https://www.emag.ro/aspirator-umed-uscat-karcher-wd-2-v-12-4-18-aspirare-umeda-si-uscata-12-l-furtun-1-8m-1000w-functie-de-suflare-galben-negru-16280000/pd/D4MJNJMBM");
-
-
-     WebElement addToCart = driver.findElement(By.xpath("//div[@class='btn btn-xl btn-emag btn-block main-button gtm_680klw yeahIWantThisProduct'  ' and @data-offer-id='1038102']"));
+      WebElement addToCart = driver.findElement(By.xpath("//div[@class='flex-shrink-1 flex-grow-1']"));
         addToCart.click();
+        WebElement viewCartFromAlert = driver.findElement(By.xpath("//div[@class='table-cell col-xs-12 col-sm-2 col-md-2 d-none d-md-table-cell']"));
+        viewCartFromAlert.click();
+        WebElement favButton = driver.findElement(By.id("my_wishlist"));
+        favButton.click();
+
+        try{
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement cosulMeu = driver.findElement(By.id("my_cart"));
+        cosulMeu.click();
+        System.out.println("before FIND");
+       // WebElement stergeElement = driver.findElement(By.xpath("//div[@class='line-item line-item-footer d-md-none']/div[@class='mb-1']/button[@class='btn btn-link outline-0 fs-12 fs-md-14 btn-remove-product gtm_rp080219 remove-product']"));
+
+        WebElement stergeElement = driver.findElement(By.xpath("//div[@class='line-item line-item-footer d-md-none']/div[@class='mb-1']//button[normalize-space(text())='Sterge']"));
+
+        System.out.println("AFTER FIND, BEFORE CLICK");
+
+
+       // WebElement stergeElement = driver.findElement(By.linkText("Sterge"));
+       // stergeElement.click();
+
+
+
+
+        System.out.println("CLICKL????");
+
+
+
+
+
+
+
+
 
     }
 }
