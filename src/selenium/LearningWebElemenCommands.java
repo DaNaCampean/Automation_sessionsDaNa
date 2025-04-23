@@ -119,7 +119,12 @@ public class LearningWebElemenCommands {
         // getLocation Command
         //
 
-
+//Initializing the web element via the By.className locator strategy
+        WebElement element = driver.findElement(By.className("toc"));
+//Verifying that element was found (!null) and printing a message
+        if (element != null)
+            System.out.println("Element found by className");
+//Closing
 
 
 

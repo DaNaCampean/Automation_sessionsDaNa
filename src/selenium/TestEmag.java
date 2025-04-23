@@ -13,7 +13,9 @@ public class TestEmag {
         public static void main(String[] args) {
             // Setează locația ChromeDriver
 
-            System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
+            //System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
+
+            System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
 
             // Inițializează WebDriver
             WebDriver driver = new ChromeDriver();
