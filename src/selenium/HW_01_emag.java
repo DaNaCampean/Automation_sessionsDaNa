@@ -104,7 +104,7 @@ public class HW_01_emag {
         cosulMeu.click();
         System.out.println("before FIND");
 
-     WebElement stergeElement = driver.findElement(By.xpath("//div[@class='line-item line-item-footer d-none d-md-block']/div[@class='mb-1']/button[@class='btn btn-link outline-0 fs-12 fs-md-14 btn-remove-product gtm_rp080219 remove-product']"));
+        WebElement stergeElement = driver.findElement(By.xpath("//div[@class='line-item line-item-footer d-none d-md-block']/div[@class='mb-1']/button[@class='btn btn-link outline-0 fs-12 fs-md-14 btn-remove-product gtm_rp080219 remove-product']"));
 
         //WebElement stergeElement = driver.findElement(By.xpath("/div[@class='line-item line-item-footer d-md-none']/div[@class='mb-1']/button[normalize-space(text())='Sterge']"));
 
