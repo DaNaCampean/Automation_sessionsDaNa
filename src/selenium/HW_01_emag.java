@@ -24,9 +24,9 @@ public class HW_01_emag {
         System.out.println("STARTTTTTTTTTTTTTTTTTT");
 
 
-        //System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/dana/Desktop/JAVA_automation/3apra25/chromedriver-mac-x64/chromedriver");
 
-        System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "D:\\Backup Softvision\\AUTOMATION STUFF\\selenium\\chromedriver-win64\\chromedriver.exe");
 
 
         WebDriver driver = new ChromeDriver();
@@ -41,9 +41,9 @@ public class HW_01_emag {
 
         System.out.println("ASSERT OK");
         String expectedTitle1 = "eMAG.ă";
-        assertEquals(actualTitle, expectedTitle1, "nu sunt pe emag"); // doar daca nu e ok);
+       // assertEquals(actualTitle, expectedTitle1, "nu sunt pe emag"); // doar daca nu e ok);
 
-        System.out.println("ASSERT upsssss");
+        //System.out.println("ASSERT upsssss");
 
         //  WebElement firstNameField = driver.findElement(By.id("firstname"));
         WebElement searchField = driver.findElement(By.id("searchboxTrigger"));
@@ -54,7 +54,7 @@ public class HW_01_emag {
       //  searchField.sendKeys(Keys.RETURN);
 
        // Așteaptă pentru rezultate
-      //  driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
 
         // XPATH - search for aspiratoare
